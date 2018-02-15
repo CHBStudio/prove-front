@@ -5,11 +5,12 @@ import Link from './Link';
 import styles from './styles.scss';
 
 
-export default () => {
+export default ({ onClickLink=()=>{} }) => {
+  const onClick = pageName => () => onClickLink(pageName);
   return <div className={styles.root}>
-    <Link to={urls.landingAbout}>Программы</Link>
-    <Link to={urls.landingCoach}>О тренере</Link>
-    <Link to={urls.landingFaq}>FAQ</Link>
-    <Link to={urls.landingResults}>Результаты</Link>
+    <Link onClick={onClick(urls.LANDING_PAGES.about)} to={urls.landingAbout}>Программы</Link>
+    <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
+    <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>FAQ</Link>
+    <Link onClick={onClick(urls.LANDING_PAGES.results)} to={urls.landingResults}>Результаты</Link>
   </div>
 }

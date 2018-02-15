@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import scrollToComponent from 'react-scroll-to-component';
 
 import urls from 'config/urls';
+import history from 'utils/history';
 
 import Header from './Header';
 import About from './About';
@@ -26,40 +27,63 @@ class Landing extends Component{
   constructor(props){
     super(props);
     this.pageRefs = {};
+
+    this.canChangeUrl = true;
+    this.changeUrlTimeout = null;
   }
 
   componentDidMount(){
-    this.scrollToCurrent();
+    this.scrollToPage(this.props.pageName, 0);
   }
 
-  componentDidUpdate(){
-    this.scrollToCurrent();
+  clearTimeout(){
+    if(this.changeUrlTimeout){
+      clearTimeout(this.changeUrlTimeout);
+      this.changeUrlTimeout = null;
+    }
   }
 
-  pageRef = pageName => ref => this.pageRefs[pageName] = ref;
+  scrollToPage = (pageName, scrollTime=1000) => {
+    this.canChangeUrl = false;
 
-  scrollToCurrent = () => {
-    const pageRef = this.pageRefs[this.props.pageName];
+    this.changeUrlTimeout = setTimeout(() => {
+      this.canChangeUrl = true; this.clearTimeout();
+    }, scrollTime);
+
+    const pageRef = this.pageRefs[pageName];
     if(!pageRef){
       return;
     }
     scrollToComponent(pageRef, {
       align: 'middle',
-      duration: 1000,
+      duration: scrollTime,
       ease:'inOutQuad',
     });
   };
 
+  changeUrl = pageName => () => {
+    if(!this.canChangeUrl){
+      return;
+    }
+    history.push(`${urls.landing}/${pageName}`);
+  };
+
+  pageRef = pageName => ref => this.pageRefs[pageName] = ref;
+
   render(){
     return <div className={styles.root}>
-      <Header/>
+      <Header onClickLink={this.scrollToPage}/>
       <div className={styles.screensContainer}>
-        <About pageRef={this.pageRef(urls.LANDING_PAGES.about)}/>
-        <Coach pageRef={this.pageRef(urls.LANDING_PAGES.coach)}/>
-        <FAQ pageRef={this.pageRef(urls.LANDING_PAGES.faq)}/>
-        <Results pageRef={this.pageRef(urls.LANDING_PAGES.results)}/>
+        <About pageRef={this.pageRef(urls.LANDING_PAGES.about)} onEnter={this.changeUrl(urls.LANDING_PAGES.about)}/>
+        <Coach pageRef={this.pageRef(urls.LANDING_PAGES.coach)} onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}/>
+        <FAQ pageRef={this.pageRef(urls.LANDING_PAGES.faq)} onEnter={this.changeUrl(urls.LANDING_PAGES.faq)}/>
+        <Results pageRef={this.pageRef(urls.LANDING_PAGES.results)} onEnter={this.changeUrl(urls.LANDING_PAGES.results)}/>
       </div>
     </div>
+  }
+
+  componentWillUnmount() {
+    this.clearTimeout();
   }
 }
 

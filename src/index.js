@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
+import history from 'utils/history';
 // import store from 'store';
 
 import Root from './Root';
@@ -20,9 +21,9 @@ let store = null;
 
 ReactDOM.render(
     <Provider store={ store }>
-        <BrowserRouter>
+        <Router history={history}>
             <Root/>
-        </BrowserRouter>
+        </Router>
     </Provider>,
     document.getElementById('root'),
 );
