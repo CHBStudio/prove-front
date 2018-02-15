@@ -1,0 +1,21 @@
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    ["module-alias", [
+      { "src": "./src/utils", "expose": "utils" },
+      { "src": "./src/store", "expose": "store" },
+      { "src": "./src/config", "expose": "config" },
+      { "src": "./src/components", "expose": "components" }
+    ]],
+    ["provide-modules", {
+      "react": {
+        "default": "React",
+        "destructured": ["Component"]
+      },
+      "classnames": {
+        "default": "cn"
+      }
+    }],
+    "babel-plugin-transform-class-properties"
+  ]
+}

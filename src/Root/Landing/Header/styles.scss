@@ -1,0 +1,14 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: $header-height;
+  background-color: rgba(#fff, .9);
+  width: 100%;
+  padding: 0 $indent-big;
+}

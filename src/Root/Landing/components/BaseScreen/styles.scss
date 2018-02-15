@@ -1,0 +1,9 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  padding-top: $header-height;
+  background-color: #fff;
+}

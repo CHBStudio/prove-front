@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  outline: none;
+  list-style: none;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  font-family: 'Roboto', 'Helvetica Neue', 'sans-serif';
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+input, textarea, :global(._SELECTABLE) {
+  -moz-user-select: text;
+  -o-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
