@@ -1,3 +1,7 @@
+import Title from 'components/Title';
+import Button from 'components/Button';
+import PlayButton from 'components/PlayButton';
+
 import BaseScreen from '../components/BaseScreen';
 
 import styles from './styles.scss';
@@ -5,6 +9,16 @@ import styles from './styles.scss';
 
 export default ({ pageRef, onEnter }) => {
   return <BaseScreen pageRef={pageRef} onEnter={onEnter}>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores, cum inventore minima modi odit pariatur reprehenderit ut? Accusantium, aperiam architecto commodi consequatur cupiditate dolorum ex fugiat ipsa repellat voluptatum!
+    <div className={styles.leftSide}>
+      <Title tag="h1" className={styles.mainTitle}>Заголовок - привлекающая фраза</Title>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
+      <br/>
+      <br/>
+      <Button>Смотреть видео</Button>
+      <div className={styles.logo}/>
+    </div>
+    <div className={styles.rightSide}>
+      <PlayButton className={styles.playButton}/>
+    </div>
   </BaseScreen>
 }

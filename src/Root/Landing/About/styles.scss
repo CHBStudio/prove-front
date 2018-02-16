@@ -1,1 +1,49 @@
 @import "src/Root/vars";
+
+
+.mainTitle{
+  font-size: $font-size-giant;
+  margin-bottom: $indent-big;
+}
+
+.leftSide{
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  vertical-align: top;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: $indent-giant;
+}
+
+.rightSide{
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-image: url("./img/cover.jpg");
+  background-color: transparent;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.logo{
+  display: block;
+  position: relative;
+  height: 200px;
+  width: 100%;
+  margin-top: $indent-big;
+  background-image: url("./img/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
+.playButton{
+  display: block;
+  position: absolute;
+  top: calc(50% - #{$size-big/2});
+  left: -#{$size-big/2}
+}

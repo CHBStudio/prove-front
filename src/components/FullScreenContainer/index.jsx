@@ -38,7 +38,7 @@ export default class extends Component{
   }
 
   render(){
-    return <div
+    return <section
       style={{
         height: `${this.state.height}px`,
         width: `${this.state.width}px`
@@ -47,7 +47,7 @@ export default class extends Component{
       ref={this.props.pageRef}
     >
       { this.props.children }
-    </div>
+    </section>
   }
 
   componentWillUnmount(){

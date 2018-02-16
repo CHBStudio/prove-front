@@ -1,0 +1,23 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: inline-block;
+  position: relative;
+  height: $size-normal;
+  line-height: $size-normal;
+  text-align: center;
+  border: 2px solid $color-pink;
+  background-color: #fff;
+  padding: 0 $indent-normal;
+  font-size: $font-size-normal;
+  color: #000;
+  transition: color $anim-normal;
+  cursor: pointer;
+  outline: none;
+  border-radius: $border-radius-small;
+
+  &:hover{
+    color: $color-pink;
+  }
+}

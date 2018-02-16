@@ -1,0 +1,11 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  font-size: $font-size-big;
+  color: #000;
+  font-family: $font-family-roboto-condesed;
+  text-align: left;
+}

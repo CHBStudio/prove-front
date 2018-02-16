@@ -1,0 +1,23 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  height: $size-big;
+  width: $size-big;
+  cursor: pointer;
+  transition: transform $anim-normal;
+
+  &:hover{
+    transform: scale(1.05);
+    .body{
+      fill: $color-pink;
+    }
+  }
+}
+
+.body{
+  fill: $color-pink-light;
+  transition: fill $anim-normal;
+}

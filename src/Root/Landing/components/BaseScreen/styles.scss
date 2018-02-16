@@ -4,8 +4,8 @@
 .root{
   display: block;
   position: relative;
-  padding-top: $header-height;
   background-color: #fff;
+  padding: $indent-giant;
 }
 
 .waypoint{

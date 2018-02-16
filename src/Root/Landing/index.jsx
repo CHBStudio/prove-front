@@ -46,6 +46,7 @@ class Landing extends Component{
   scrollToPage = (pageName, scrollTime=1000) => {
     this.canChangeUrl = false;
 
+    this.clearTimeout();
     this.changeUrlTimeout = setTimeout(() => {
       this.canChangeUrl = true; this.clearTimeout();
     }, scrollTime);
