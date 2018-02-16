@@ -1,0 +1,14 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: inline-block;
+  position: relative;
+  width: calc(100%/3 + #{$indent-giant});
+  height: 100%;
+  left: -#{$indent-giant};
+  min-height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+}

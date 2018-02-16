@@ -26,7 +26,7 @@
   color: $color-black;
 }
 
-input, textarea, :global(._SELECTABLE) {
+input, textarea, :global(._SELECTABLE), p {
   -moz-user-select: text;
   -o-user-select: text;
   -khtml-user-select: text;

@@ -1,8 +1,14 @@
 import styles from './styles.scss';
 
 
-export default ({ onClick=()=>{}, className }) =>
-  <svg
+export default ({
+  onClick=()=>{},
+  className,
+  onHover=()=>{},
+  onOver=()=>{},
+}) => <svg
+    onMouseEnter={onHover}
+    onMouseLeave={onOver}
     onClick={onClick}
     className={cn(styles.root, className)}
     width="50px"

@@ -1,0 +1,12 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: calc(100%*2/3 - #{$indent-giant});
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}

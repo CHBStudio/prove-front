@@ -25,7 +25,16 @@ export default class extends Component{
 
     this.state = {
       showHeader: false,
-    }
+      showHeaderTimeout: true,
+    };
+
+    this.timeoutObj = null;
+  }
+
+  componentDidMount(){
+    this.timeoutObj = setTimeout(() => this.setState({ showHeaderTimeout: false }), 2000);
+
+    window.addEventListener('mousemove', this.mouseMoveListener);
   }
 
   mouseMoveListener = (e) => {
@@ -40,13 +49,10 @@ export default class extends Component{
     }
   };
 
-  componentDidMount(){
-    window.addEventListener('mousemove', this.mouseMoveListener);
-  }
-
   render(){
+    const { showHeader, showHeaderTimeout } = this.state;
     const onClick = pageName => () => this.props.onClickLink(pageName);
-    return <header className={cn(styles.root, !this.state.showHeader && styles.rootHidden)}>
+    return <header className={cn(styles.root, !showHeaderTimeout && !showHeader && styles.rootHidden)}>
       <div className={styles.logo}/>
       <Link onClick={onClick(urls.LANDING_PAGES.about)} to={urls.landingAbout}>Программы</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
@@ -63,5 +69,10 @@ export default class extends Component{
 
   componentWillUnmount(){
     window.removeEventListener('mousemove', this.mouseMoveListener);
+
+    if(this.timeoutObj){
+      clearTimeout(this.timeoutObj);
+      this.timeoutObj = null;
+    }
   }
 }

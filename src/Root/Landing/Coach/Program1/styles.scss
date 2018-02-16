@@ -1,0 +1,32 @@
+@import "src/Root/vars";
+
+
+.text{
+  display: block;
+  position: relative;
+  margin: $indent-normal 0;
+}
+
+.descriptionSide{
+  transition: transform $anim-normal, opacity $anim-normal;
+
+  &Shifted{
+    transform: translate($indent-big, -50%);
+    opacity: .3;
+  }
+}
+
+.playButton{
+  display: block;
+  position: absolute;
+  bottom: 20%;
+  right: -#{$size-big/2};
+}
+
+.photoSide{
+  transition: width $anim-normal;
+
+  &Wide{
+    width: calc(100%/3 + #{$indent-big} + #{$indent-giant});
+  }
+}

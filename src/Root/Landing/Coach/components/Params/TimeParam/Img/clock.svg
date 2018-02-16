@@ -1,0 +1,12 @@
+<svg width="1176px" height="1176px" viewBox="0 0 1176 1176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-807.000000, -1690.000000)">
+            <g id="clock" transform="translate(807.000000, 1690.000000)">
+                <circle id="Oval" fill="#FFB2B8" cx="588" cy="588" r="588"></circle>
+                <path d="M589.5,587.5 L589.5,172" id="Line-2" stroke="#FFFFFF" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M589.5,587.5 L879,883" id="Line-2" stroke="#FFFFFF" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M606.635473,1006 C767.208939,947.157974 881.793838,792.95688 881.793838,611.993048 C881.793838,380.309596 693.97729,192.493048 462.293838,192.493048 C347.636448,192.493048 243.72269,238.491998 168,313.042459" id="Oval-2" stroke="#FFFFFF" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,149" transform="translate(524.896919, 599.246524) rotate(180.000000) translate(-524.896919, -599.246524) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
