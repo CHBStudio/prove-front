@@ -11,4 +11,27 @@
   background-color: rgba(#fff, .9);
   width: 100%;
   padding: 0 $indent-giant;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform $anim-normal, opacity $anim-normal;
+
+
+  &Hidden{
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.logo{
+  display: inline-block;
+  position: relative;
+  height: $header-height;
+  width: 150px;
+  margin-right: $indent-normal;
+  background-image: url("./img/logo.svg");
+  background-position: center left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: top;
 }

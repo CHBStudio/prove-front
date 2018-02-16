@@ -11,13 +11,13 @@
   &:hover{
     .line{
       transform: translateY(0);
-      opacity: .3;
+      background-color: $color-pink-light;
     }
   }
 
   &:active{
     .line {
-      opacity: 1;
+      background-color: $color-pink;
       transform: translateY(0);
     }
   }
@@ -26,7 +26,7 @@
     color: $color-pink;
 
     .line{
-      opacity: 1;
+      background-color: $color-pink;
       transform: translateY(0);
     }
   }
@@ -35,7 +35,7 @@
     &:hover{
       .line{
         transform: translateY(0);
-        opacity: 1;
+        background-color: $color-pink;
       }
     }
   }
@@ -48,9 +48,8 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: $color-pink;
-  opacity: 0;
+  background-color: transparent;
   transform: translateY(100%);
   pointer-events: none;
-  transition: opacity $anim-normal, transform $anim-normal;
+  transition: background-color $anim-normal, transform $anim-normal;
 }

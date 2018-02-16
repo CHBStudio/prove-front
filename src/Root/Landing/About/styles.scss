@@ -4,46 +4,36 @@
 .mainTitle{
   font-size: $font-size-giant;
   margin-bottom: $indent-big;
+  text-align: right;
 }
 
 .leftSide{
   display: inline-block;
   position: relative;
-  width: 50%;
+  width: calc(50% - #{$indent-giant});
+  margin-right: $indent-giant;
   vertical-align: top;
   top: 50%;
   transform: translateY(-50%);
-  padding-right: $indent-giant;
+  text-align: right;
 }
 
 .rightSide{
-  display: inline-block;
-  position: relative;
+  display: block;
+  position: absolute;
   width: 50%;
+  right: 0;
+  top: 0;
   height: 100%;
   background-image: url("./img/cover.jpg");
-  background-color: transparent;
-  background-position: center left;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.logo{
-  display: block;
-  position: relative;
-  height: 200px;
-  width: 100%;
-  margin-top: $indent-big;
-  background-image: url("./img/logo.svg");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: contain;
-  background-color: transparent;
+  background-color: #ccc;
 }
 
 .playButton{
   display: block;
   position: absolute;
-  top: calc(50% - #{$size-big/2});
-  left: -#{$size-big/2}
+  bottom: $indent-giant;
+  left: $indent-giant;
 }

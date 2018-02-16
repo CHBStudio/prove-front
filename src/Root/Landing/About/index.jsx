@@ -10,12 +10,11 @@ import styles from './styles.scss';
 export default ({ pageRef, onEnter }) => {
   return <BaseScreen pageRef={pageRef} onEnter={onEnter}>
     <div className={styles.leftSide}>
-      <Title tag="h1" className={styles.mainTitle}>Заголовок - привлекающая фраза</Title>
+      <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
       <br/>
       <br/>
-      <Button>Смотреть видео</Button>
-      <div className={styles.logo}/>
+      <Button>Какое-то действие</Button>
     </div>
     <div className={styles.rightSide}>
       <PlayButton className={styles.playButton}/>
