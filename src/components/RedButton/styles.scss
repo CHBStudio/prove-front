@@ -1,0 +1,13 @@
+@import "src/Root/vars";
+
+
+.root{
+  background-color: $color-pink-light;
+  border: none;
+  color: $color-black;
+  transition: background-color $anim-normal;
+
+  &:hover{
+    background-color: $color-pink;
+  }
+}

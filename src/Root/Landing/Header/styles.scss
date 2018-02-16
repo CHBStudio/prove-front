@@ -35,3 +35,25 @@
   background-repeat: no-repeat;
   vertical-align: top;
 }
+
+.rightGroup{
+  display: block;
+  position: absolute;
+  height: $header-height;
+  top: 0;
+  width: auto;
+  right: $indent-giant;
+  line-height: $header-height;
+}
+
+.enterButton,
+.regButton{
+  height: $size-small;
+  line-height: $size-small;
+  vertical-align: middle;
+  font-size: $font-size-small;
+}
+
+.regButton{
+  margin-right: $indent-normal;
+}

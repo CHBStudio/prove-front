@@ -1,6 +1,8 @@
 import propTypes from 'prop-types';
 
 import urls from 'config/urls';
+import RedButton from 'components/RedButton';
+import Button from 'components/Button';
 
 import Link from './Link';
 
@@ -50,6 +52,11 @@ export default class extends Component{
       <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>FAQ</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.results)} to={urls.landingResults}>Результаты</Link>
+
+      <div className={styles.rightGroup}>
+        <RedButton className={styles.regButton}>Регистрация</RedButton>
+        <Button className={styles.enterButton}>Вход</Button>
+      </div>
     </header>
 
   }
@@ -58,19 +65,3 @@ export default class extends Component{
     window.removeEventListener('mousemove', this.mouseMoveListener);
   }
 }
-
-// export default ({ onClickLink=()=>{} }) => {
-//   const onClick = pageName => () => onClickLink(pageName);
-//   return <header className={styles.root}>
-//     <div className={styles.logo}/>
-//     <Link onClick={onClick(urls.LANDING_PAGES.about)} to={urls.landingAbout}>Программы</Link>
-//     <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
-//     <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>FAQ</Link>
-//     <Link onClick={onClick(urls.LANDING_PAGES.results)} to={urls.landingResults}>Результаты</Link>
-//
-//     {/*<div className={styles.rightContainer}>*/}
-//       {/*<Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>Вход</Link>*/}
-//       {/*<Link onClick={onClick(urls.LANDING_PAGES.results)} to={urls.landingResults}>Регистрация</Link>*/}
-//     {/*</div>*/}
-//   </header>
-// }

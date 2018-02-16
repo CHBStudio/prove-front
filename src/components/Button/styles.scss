@@ -8,16 +8,17 @@
   line-height: $size-normal;
   text-align: center;
   border: 2px solid $color-pink-light;
-  background-color: #fff;
+  background-color: transparent;
   padding: 0 $indent-normal;
   font-size: $font-size-normal;
   color: #000;
-  transition: border-color $anim-normal;
+  transition: border-color $anim-normal, background-color $anim-normal;
   cursor: pointer;
   outline: none;
   border-radius: $border-radius-small;
 
   &:hover{
     border-color: $color-pink;
+    background-color: #fff;
   }
 }
