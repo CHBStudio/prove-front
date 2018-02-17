@@ -13,7 +13,6 @@ import videoUrl from './video/small.mp4';
 import styles from './styles.scss';
 
 
-
 export default class extends Component{
   constructor(props){
     super(props);
@@ -42,7 +41,7 @@ export default class extends Component{
         isHidden={showVideo}
       >
         <Title tag="h3">
-          Самостоятельные тренировки с лентами
+          Идеальные ягодицы
         </Title>
         <Params videoParam="6 видео-уроков" timeParam="12 часов занятий"/>
         <p className={styles.text}>

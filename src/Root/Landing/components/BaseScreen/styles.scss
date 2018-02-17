@@ -18,4 +18,8 @@
   z-index: 0;
   pointer-events: none;
   opacity: 0;
+
+  &Save{
+    top: auto;
+  }
 }

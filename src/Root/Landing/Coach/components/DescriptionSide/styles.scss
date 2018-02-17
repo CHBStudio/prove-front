@@ -3,9 +3,21 @@
 
 .root{
   display: inline-block;
-  position: absolute;
-  right: 0;
-  width: calc(100%*2/3 - #{$indent-giant});
+  position: relative;
+  width: calc(100% - 400px - #{$indent-giant} * 1.5);
+  height: 600px;
+  vertical-align: top;
+  transition: opacity $anim-normal;
+
+  &Hidden{
+    opacity: .1;
+  }
+}
+
+.wrapper{
+  display: block;
+  position: relative;
+  width: 100%;
   height: auto;
   top: 50%;
   transform: translateY(-50%);

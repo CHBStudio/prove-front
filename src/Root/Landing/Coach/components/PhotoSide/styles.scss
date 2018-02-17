@@ -4,11 +4,74 @@
 .root{
   display: inline-block;
   position: relative;
-  width: calc(100%/3 + #{$indent-giant});
+  width: 400px;
+  height: 600px;
+  transition: transform $anim-normal, opacity $anim-normal;
+
+  &Left{
+    margin-right: calc(#{$indent-giant} * 1.5);
+
+    &:hover{
+      transform: translateX($indent-big);
+    }
+  }
+
+  &Right{
+    margin-left: calc(#{$indent-giant} * 1.5);
+
+    &:hover{
+      transform: translateX(-$indent-big);
+    }
+  }
+
+  &Hidden{
+    opacity: .1;
+  }
+
+  &:hover .playButtonBody{
+    fill: $color-pink;
+  }
+
+  &:hover .photo{
+    transform: scale(1.1);
+  }
+}
+
+.photoWrapper,
+.photo{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  left: -#{$indent-giant};
-  min-height: 600px;
+}
+
+.photoWrapper{
+  overflow: hidden;
+}
+
+.photo{
   background-position: center;
   background-size: cover;
   background-color: transparent;
+  transition: transform $anim-normal;
+}
+
+.playButton{
+  display: block;
+  position: absolute;
+  bottom: 20%;
+
+  &Right{
+    left: -#{$size-big/2};
+  }
+
+  &Left{
+    right: -#{$size-big/2};
+  }
+}
+
+.playButtonBody{
+
 }

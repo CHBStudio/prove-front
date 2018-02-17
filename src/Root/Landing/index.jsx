@@ -56,7 +56,7 @@ class Landing extends Component{
       return;
     }
     scrollToComponent(pageRef, {
-      align: 'middle',
+      align: 'top',
       duration: scrollTime,
       ease:'inOutQuad',
     });

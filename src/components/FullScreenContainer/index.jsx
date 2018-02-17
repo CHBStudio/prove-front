@@ -9,12 +9,14 @@ export default class extends Component{
     className: propTypes.string,
     children: propTypes.any,
     pageRef: propTypes.func,
+    save: propTypes.bool,
   };
 
   static defaultProps = {
     className: '',
     children: null,
     pageRef: () => {},
+    save: false,
   };
 
   constructor(props){
@@ -40,7 +42,7 @@ export default class extends Component{
   render(){
     return <section
       style={{
-        height: `${this.state.height}px`,
+        [this.props.save ? 'minHeight' : 'height']: `${this.state.height}px`,
         width: `${this.state.width}px`
       }}
       className={cn(styles.root, this.props.className)}

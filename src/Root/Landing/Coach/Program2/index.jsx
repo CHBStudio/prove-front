@@ -31,18 +31,12 @@ export default class extends Component{
     const { showVideo } = this.state;
 
     return <ProgramSection>
-      <PhotoSide
-        backgroundImage={coverImg}
-        side="left"
-        onClick={this.openVideo}
-        isHidden={showVideo}
-      />
       <DescriptionSide
         className={styles.descriptionSide}
         isHidden={showVideo}
       >
         <Title tag="h3">
-          Самостоятельные тренировки с лентами
+          Спортивный интесив
         </Title>
         <Params videoParam="6 видео-уроков" timeParam="12 часов занятий"/>
         <p className={styles.text}>
@@ -56,6 +50,12 @@ export default class extends Component{
         ]}/>
         <Price cost="7900 ₽"/>
       </DescriptionSide>
+      <PhotoSide
+        backgroundImage={coverImg}
+        side="right"
+        onClick={this.openVideo}
+        isHidden={showVideo}
+      />
       <VideoContainer
         isHidden={!showVideo}
         src={videoUrl}

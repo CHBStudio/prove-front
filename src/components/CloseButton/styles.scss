@@ -1,0 +1,24 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: absolute;
+  height: $size-small;
+  width: $size-small;
+  cursor: pointer;
+
+  &:hover .body{
+    stroke: $color-pink;
+  }
+}
+
+.svg{
+  height: 100%;
+  width: 100%;
+}
+
+.body{
+  transition: stroke $anim-normal;
+  stroke: $color-pink-light;
+}
