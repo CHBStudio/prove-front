@@ -1,0 +1,56 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: $indent-big;
+}
+
+.line{
+  display: block;
+  position: relative;
+  margin-top: $indent-small;
+  height: 2px;
+  background-color: transparent;
+  transition: transform $anim-normal;
+  width: 100%;
+
+  &Active{
+    background-color: $color-pink;
+  }
+}
+
+.topBar{
+  display: block;
+  position: relative;
+  padding: $indent-small;
+  height: auto;
+  cursor: pointer;
+
+  &:hover .line{
+    background-color: $color-pink-light;
+
+    &Active{
+      background-color: $color-pink;
+    }
+  }
+}
+
+.text{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: $indent-small;
+  overflow: hidden;
+  transition: height $anim-normal, opacity $anim-normal;
+}
+
+.title{
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
