@@ -8,5 +8,5 @@ export default ({ isHidden, src, onClose }) => <div className={cn(styles.root, i
     className={styles.closeBnt}
     onClick={onClose}
   />
-  <video className={styles.video} src={src}/>
+  <video className={styles.video} src={src} autoPlay={isHidden} loop={true} muted={isHidden}/>
 </div>;
