@@ -82,15 +82,24 @@ class Landing extends Component{
     return <div className={styles.root}>
       <Header onClickLink={this.scrollToPage}/>
       <div className={styles.screensContainer}>
-        <About pageRef={this.pageRef(urls.LANDING_PAGES.about)} onEnter={this.changeUrl(urls.LANDING_PAGES.about)}/>
+        <About
+          pageRef={this.pageRef(urls.LANDING_PAGES.about)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.about)}
+        />
         <Programs
-          pageRef={this.pageRef(urls.LANDING_PAGES.coach)}
-          onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}
+          pageRef={this.pageRef(urls.LANDING_PAGES.programs)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.programs)}
           programs={courses}
           user={user}
         />
-        <Advantages/>
-        <Coach/>
+        <Advantages
+          pageRef={this.pageRef(urls.LANDING_PAGES.advantages)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.advantages)}
+        />
+        <Coach
+          pageRef={this.pageRef(urls.LANDING_PAGES.coach)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}
+        />
         <FAQ
           pageRef={this.pageRef(urls.LANDING_PAGES.faq)}
           onEnter={this.changeUrl(urls.LANDING_PAGES.faq)}

@@ -5,6 +5,7 @@ import RedButton from 'components/RedButton';
 import Button from 'components/Button';
 import { modals, user } from 'store';
 import connect from 'utils/connect';
+import history from 'utils/history';
 
 import Link from './Link';
 
@@ -29,6 +30,11 @@ export default class extends Component{
   openLoginModal = () => this.props.actions.modals.openModal('login');
 
   openRegModal = () => this.props.actions.modals.openModal('registration');
+
+  onClickLogo = () => {
+    history.push(urls.landingAbout);
+    this.props.onClickLink(urls.LANDING_PAGES.about);
+  };
 
   render(){
 
@@ -59,10 +65,11 @@ export default class extends Component{
 
     const onClick = pageName => () => this.props.onClickLink(pageName);
     return <header className={styles.root}>
-      <div className={styles.logo}/>
-      <Link onClick={onClick(urls.LANDING_PAGES.about)} to={urls.landingAbout}>Программы</Link>
+      <div className={styles.logo} onClick={this.onClickLogo}/>
+      <Link onClick={onClick(urls.LANDING_PAGES.programs)} to={urls.landingPrograms}>Программы</Link>
+      <Link onClick={onClick(urls.LANDING_PAGES.advantages)} to={urls.landingAdvantages}>Преимущества</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
-      <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>FAQ</Link>
+      <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>F.A.Q.</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.results)} to={urls.landingResults}>Результаты</Link>
       { user.isLoggedIn ? rightGroupForUser : rightGroupToLogin }
     </header>

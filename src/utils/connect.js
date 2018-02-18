@@ -11,6 +11,8 @@ export default (entitiesToAction={}) => component => {
         connectedActions[entityKey] = bindActionCreators(entitiesToAction[entityKey].actions.actions, dispatch);
       });
       return { actions: connectedActions };
-    }
+    },
+    null,
+    {pure:false}
   )(component);
 }
