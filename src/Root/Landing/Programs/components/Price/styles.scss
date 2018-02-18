@@ -1,0 +1,26 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: $indent-big;
+}
+
+.cost{
+  display: inline-block;
+  position: relative;
+  height: $size-normal;
+  width: auto;
+  font-size: $font-size-big;
+  line-height: $size-normal;
+  color: $color-true-black;
+  margin-right: $indent-normal;
+  vert-align: top;
+}
+
+.button{
+  vertical-align: top;
+}

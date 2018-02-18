@@ -1,1 +1,15 @@
 @import "src/Root/vars";
+
+
+.title{
+  font-size: $font-size-giant;
+  text-align: center;
+}
+
+.container{
+  display: block;
+  position: relative;
+  width: 70%;
+  min-width: 600px;
+  margin: $indent-big auto 0 auto;
+}

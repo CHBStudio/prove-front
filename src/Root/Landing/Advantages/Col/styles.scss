@@ -1,0 +1,41 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: inline-block;
+  position: relative;
+  width: calc(100%/3 - #{$indent-giant} * 2 / 3);
+
+  &:nth-of-type(2n){
+    margin: 0 $indent-giant;
+  }
+}
+
+.icon{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: calc(#{$size-big} * 2);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: pink;
+}
+
+.title{
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: $font-size-big;
+  margin-top: $indent-big;
+}
+
+.text{
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: $font-size-normal;
+  margin-top: $indent-normal;
+}

@@ -3,17 +3,22 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import scrollToComponent from 'react-scroll-to-component';
 
 import urls from 'config/urls';
+import connect from 'utils/connect';
 import history from 'utils/history';
+import { user } from 'store';
 
 import Header from './Header';
 import About from './About';
-import Coach from './Coach';
+import Programs from './Programs';
 import FAQ from './FAQ';
-import Results from './Results';
+import Advantages from './Advantages';
+import Coach from './Coach';
+// import Results from './Results';
 
 import styles from './styles.scss';
 
 
+@connect({ user })
 class Landing extends Component{
 
   static propTypes = {
@@ -33,7 +38,7 @@ class Landing extends Component{
   }
 
   componentDidMount(){
-    this.scrollToPage(this.props.pageName, 0);
+    this.scrollToPage(this.props.pageName, 1);
   }
 
   clearTimeout(){
@@ -76,9 +81,11 @@ class Landing extends Component{
       <Header onClickLink={this.scrollToPage}/>
       <div className={styles.screensContainer}>
         <About pageRef={this.pageRef(urls.LANDING_PAGES.about)} onEnter={this.changeUrl(urls.LANDING_PAGES.about)}/>
-        <Coach pageRef={this.pageRef(urls.LANDING_PAGES.coach)} onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}/>
+        <Programs pageRef={this.pageRef(urls.LANDING_PAGES.coach)} onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}/>
+        <Advantages/>
+        <Coach/>
         <FAQ pageRef={this.pageRef(urls.LANDING_PAGES.faq)} onEnter={this.changeUrl(urls.LANDING_PAGES.faq)}/>
-        <Results pageRef={this.pageRef(urls.LANDING_PAGES.results)} onEnter={this.changeUrl(urls.LANDING_PAGES.results)}/>
+        {/*<Results pageRef={this.pageRef(urls.LANDING_PAGES.results)} onEnter={this.changeUrl(urls.LANDING_PAGES.results)}/>*/}
       </div>
     </div>
   }

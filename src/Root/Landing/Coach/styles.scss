@@ -1,6 +1,56 @@
 @import "src/Root/vars";
 
+.root {
+  padding: $indent-giant 0;
+}
 
-.mainTitle{
+.container{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.video,
+.overlay{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video{
+  z-index: 0;
+}
+
+.overlay{
+  z-index: 1;
+  background-color: rgba(0,0,0, .75);
+}
+
+.content{
+  display: block;
+  position: relative;
+  width: calc(100%/2.5);
+  height: 100%;
+  z-index: 2;
+  padding: $indent-giant;
+}
+
+.title{
+  display: block;
+  position: relative;
+  margin-bottom: $indent-giant;
   font-size: $font-size-giant;
+  padding-left: $indent-giant;
+}
+
+.text{
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: $font-size-normal;
+  margin-bottom: $indent-big;
 }
