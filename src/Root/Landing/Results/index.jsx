@@ -31,6 +31,7 @@ export default ({ pageRef, onEnter, results }) => {
     pageRef={pageRef}
     onEnter={onEnter}
     className={styles.root}
+    save={true}
   >
     <Title className={styles.title}>Результаты</Title>
     <Slider {...settings}>
