@@ -22,7 +22,6 @@ export default class extends Component{
       didMount: false,
     };
 
-    this.titleWidth = null;
     this.textHeight = null
   }
 
@@ -45,17 +44,10 @@ export default class extends Component{
       className={styles.root}
     >
       <div className={styles.topBar} onClick={this.toggle}>
-        <Title
-          tag="h3"
-          titleRef={ref => this.titleRef = ref}
-          className={styles.title}
-        >
+        <Title tag="h3" className={styles.title}>
           { this.props.title }
         </Title>
-        <div
-          className={cn(styles.line, isOpen && styles.lineActive)}
-          style={{ transform: `scaleX(${ (isOpen || !didMount) ? 1 : this.titleWidth/700 })` }}
-        />
+        <div className={cn(styles.line, isOpen && styles.lineActive)}/>
       </div>
       { !didMount && <div
         className={styles.text}

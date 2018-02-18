@@ -13,7 +13,7 @@ import Programs from './Programs';
 import FAQ from './FAQ';
 import Advantages from './Advantages';
 import Coach from './Coach';
-// import Results from './Results';
+import Results from './Results';
 
 import styles from './styles.scss';
 
@@ -85,7 +85,7 @@ class Landing extends Component{
         <Advantages/>
         <Coach/>
         <FAQ pageRef={this.pageRef(urls.LANDING_PAGES.faq)} onEnter={this.changeUrl(urls.LANDING_PAGES.faq)}/>
-        {/*<Results pageRef={this.pageRef(urls.LANDING_PAGES.results)} onEnter={this.changeUrl(urls.LANDING_PAGES.results)}/>*/}
+        <Results pageRef={this.pageRef(urls.LANDING_PAGES.results)} onEnter={this.changeUrl(urls.LANDING_PAGES.results)}/>
       </div>
     </div>
   }

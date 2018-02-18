@@ -1,1 +1,28 @@
 @import "src/Root/vars";
+
+
+.root{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.slider{
+  //width: calc(100% - #{$indent-giant});
+}
+
+.title{
+  padding-left: $indent-giant;
+  font-size: $font-size-giant;
+  margin-bottom: $indent-giant;
+}
+
+.slideWrapper{
+  display: block;
+  position: relative;
+  //border-right: calc(#{$indent-giant}) solid #fff;
+  //border-left: calc(#{$indent-giant}) solid #fff;
+  //
+  //&:nth-of-type(2n){
+  //  border: none;
+  //}
+}

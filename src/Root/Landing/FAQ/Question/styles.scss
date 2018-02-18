@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  margin-top: $indent-big;
+  margin-top: $indent-normal;
 }
 
 .line{
@@ -17,9 +17,11 @@
   background-color: transparent;
   transition: transform $anim-normal;
   width: 100%;
+  transform: scaleX(0);
 
   &Active{
     background-color: $color-pink;
+    transform: scaleX(1);
   }
 }
 
@@ -44,7 +46,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  padding: $indent-small;
+  padding: 0 $indent-small;
   overflow: hidden;
   transition: height $anim-normal, opacity $anim-normal;
 }
@@ -53,4 +55,9 @@
   display: inline-block;
   position: relative;
   vertical-align: top;
+  font-size: $font-size-normal-big;
+
+  &:hover{
+    color: $color-true-black;
+  }
 }

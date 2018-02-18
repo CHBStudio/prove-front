@@ -1,0 +1,55 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: absolute;
+  height: $size-small;
+  width: $size-small;
+  cursor: pointer;
+  transition: transform $anim-normal;
+
+  top: calc(#{-$size-small} + #{-$indent-big});
+
+  z-index: 3;
+
+  &:hover .iconBody{
+    stroke: $color-pink;
+  }
+
+  &Left{
+    transform: rotate(0deg);
+    right: calc(50% - #{$size-small/2} - #{$indent-big});
+
+    &:hover{
+      transform: scale(1.05);
+    }
+  }
+
+  &Right{
+    transform: rotate(180deg);
+    left: calc(50% - #{$size-small/2} - #{$indent-big});
+
+    &:hover{
+      transform: scale(1.05) rotate(180deg);
+    }
+  }
+}
+
+.icon{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.iconBody{
+  transition: stroke $anim-normal;
+  stroke: $color-pink-light;
+
+  &:hover{
+    stroke: $color-pink;
+  }
+}

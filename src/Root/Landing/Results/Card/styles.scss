@@ -1,0 +1,34 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+
+  padding-left: $indent-giant;
+  padding-right: $indent-giant;
+}
+
+.image{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  display: block;
+  position: relative;
+  margin-top: $indent-big;
+}
+
+.title{
+  font-size: $font-size-big;
+  text-align: left;
+}
+
+.text{
+  font-size: $font-size-normal;
+  text-align: left;
+  margin-top: $indent-small;
+}
