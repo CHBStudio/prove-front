@@ -3,8 +3,6 @@ import Title from 'components/Title';
 import BaseScreen from '../components/BaseScreen';
 import ProgramLeft from './ProgramLeft';
 import ProgramRight from './ProgramRight';
-import Program2 from './Program2';
-import Program3 from './Program3';
 
 import styles from './styles.scss';
 
