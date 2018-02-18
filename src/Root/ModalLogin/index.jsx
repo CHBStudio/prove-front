@@ -11,22 +11,24 @@ import api from 'config/api';
 import styles from './styles.scss';
 
 
+const initialState = {
+  email: '',
+  emailError: null,
+
+  password: '',
+  passwordError: null,
+
+  isLoading: false,
+  isError: false,
+  errorMessage: null,
+};
+
 @connect({ modals, user })
 export default class extends Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      email: '',
-      emailError: null,
-
-      password: '',
-      passwordError: null,
-
-      isLoading: false,
-      isError: false,
-      errorMessage: null,
-    };
+    this.state = { ...initialState};
 
     this.modalId = 'login';
   }
@@ -42,8 +44,7 @@ export default class extends Component{
     });
 
     if(response){
-      this.setState({ isLoading: false, isError: false });
-      this.props.actions.user.userSetData(true, response.user);
+      this.props.actions.user.userSetData(true, response.data.user);
       this.close();
       return;
     }
@@ -70,6 +71,7 @@ export default class extends Component{
   };
 
   close = () => {
+    this.setState(initialState);
     this.props.actions.modals.closeModal(this.modalId);
   };
 
@@ -77,12 +79,22 @@ export default class extends Component{
     const modalData = this.props.store.modals[this.modalId];
     const isHidden = !modalData || !modalData.isOpen;
 
-    const { emailError, passwordError, isLoading, isError, errorMessage } = this.state;
+    const { emailError, passwordError, isLoading, isError, errorMessage, email, password } = this.state;
 
     return <BaseModal onClose={this.close} isHidden={isHidden}>
       <Title tag="h5" className={styles.title}>Вход</Title>
-      <TextInput onChange={this.onChange('email')} title="Почта" errorMessage={emailError}/>
-      <TextInput onChange={this.onChange('password')} title="Пароль" errorMessage={passwordError} type="password"/>
+      <TextInput
+        onChange={this.onChange('email')}
+        title="Почта"
+        errorMessage={emailError}
+        val={email}
+      />
+      <TextInput
+        onChange={this.onChange('password')}
+        title="Пароль"
+        errorMessage={passwordError} type="password"
+        val={password}
+      />
       <RedButton onClick={this.onLogin}>Войти</RedButton>
       <FullSidesLoader isHidden={!isLoading}/>
       { isError && <p className={styles.errorMessage}>{ errorMessage }</p> }

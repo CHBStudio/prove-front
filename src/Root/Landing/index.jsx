@@ -76,7 +76,8 @@ class Landing extends Component{
   pageRef = pageName => ref => this.pageRefs[pageName] = ref;
 
   render(){
-    const { courses, faqs, results } = this.props.landing.data;
+    const { user, landing } = this.props;
+    const { courses, faqs, results } = landing.data;
 
     return <div className={styles.root}>
       <Header onClickLink={this.scrollToPage}/>
@@ -86,6 +87,7 @@ class Landing extends Component{
           pageRef={this.pageRef(urls.LANDING_PAGES.coach)}
           onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}
           programs={courses}
+          user={user}
         />
         <Advantages/>
         <Coach/>

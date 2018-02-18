@@ -60,7 +60,6 @@ export default class extends Component{
     const onClick = pageName => () => this.props.onClickLink(pageName);
     return <header className={styles.root}>
       <div className={styles.logo}/>
-
       <Link onClick={onClick(urls.LANDING_PAGES.about)} to={urls.landingAbout}>Программы</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>FAQ</Link>

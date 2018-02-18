@@ -10,26 +10,27 @@ import api from 'config/api';
 
 import styles from './styles.scss';
 
+const initialState = {
+  firstName: '',
+  firstNameError: null,
+
+  email: '',
+  emailError: null,
+
+  password: '',
+  passwordError: null,
+
+  isLoading: false,
+  isError: false,
+  errorMessage: null,
+};
 
 @connect({ modals, user })
 export default class extends Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      firstName: '',
-      firstNameError: null,
-
-      email: '',
-      emailError: null,
-
-      password: '',
-      passwordError: null,
-
-      isLoading: false,
-      isError: false,
-      errorMessage: null,
-    };
+    this.state = { ...initialState};
 
     this.modalId = 'registration';
   }
@@ -46,7 +47,6 @@ export default class extends Component{
     });
 
     if(response){
-      this.setState({ isLoading: false });
       this.props.actions.user.userSetData(true, response.data.user);
       this.close();
       return;
@@ -70,6 +70,7 @@ export default class extends Component{
   };
 
   close = () => {
+    this.setState(initialState);
     this.props.actions.modals.closeModal(this.modalId);
   };
 
@@ -91,14 +92,14 @@ export default class extends Component{
         onChange={this.onChange('email')}
         title="Почта"
         errorMessage={emailError}
-        value={email}
+        val={email}
       />
       <TextInput
         onChange={this.onChange('password')}
         title="Пароль"
         errorMessage={passwordError}
         type="password"
-        value={password}
+        val={password}
       />
       <RedButton onClick={this.onLogin}>Регистрация</RedButton>
       <FullSidesLoader isHidden={!isLoading}/>

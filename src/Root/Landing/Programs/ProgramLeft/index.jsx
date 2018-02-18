@@ -2,7 +2,9 @@ import propTypes from 'prop-types';
 
 import Title from 'components/Title';
 import pluralizer from 'utils/pluralizer';
+import Button from 'components/Button';
 
+import GoToProgram from '../components/GotToProgram';
 import ProgramSection from '../components/ProgramSection';
 import PhotoSide from '../components/PhotoSide';
 import DescriptionSide from '../components/DescriptionSide';
@@ -20,6 +22,7 @@ export default class extends Component{
 
   static propTypes = {
     data: propTypes.object.isRequired,
+    userHasThisProgram: propTypes.bool.isRequired,
   };
 
   constructor(props){
@@ -37,7 +40,7 @@ export default class extends Component{
   render(){
     const { showVideo } = this.state;
 
-    const { data } = this.props;
+    const { data, userHasThisProgram } = this.props;
 
     return <ProgramSection>
       <PhotoSide
@@ -61,7 +64,7 @@ export default class extends Component{
           { data.description }
         </p>
         <List items={data.advanteges}/>
-        <Price cost={`${data.cost} ₽`}/>
+        { userHasThisProgram ? <GoToProgram/> : <Price cost={`${data.cost} ₽`}/>}
       </DescriptionSide>
       <VideoContainer
         isHidden={!showVideo}

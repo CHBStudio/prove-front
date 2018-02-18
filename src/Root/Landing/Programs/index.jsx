@@ -9,16 +9,18 @@ import Program3 from './Program3';
 import styles from './styles.scss';
 
 
-export default ({ pageRef, onEnter, programs }) => {
+export default ({ pageRef, onEnter, programs, user }) => {
   return <BaseScreen
     pageRef={pageRef}
     onEnter={onEnter}
     save={true}
   >
     <Title className={styles.mainTitle} tag="h2">Программы</Title>
-    { programs.map((program, index) => index % 2 === 0 ?
-      <ProgramLeft key={index} data={program}/> :
-      <ProgramRight key={index} data={program}/>
-    )}
+    { programs.map((program, index) => {
+      const userHasThisProgram = user.isLoggedIn && user.data.courses.indexOf(program.id) >= 0;
+      return index % 2 === 0 ?
+      <ProgramLeft key={index} data={program} userHasThisProgram={userHasThisProgram}/> :
+      <ProgramRight key={index} data={program} userHasThisProgram={userHasThisProgram}/>
+    })}
   </BaseScreen>
 }
