@@ -1,10 +1,10 @@
 import styles from './styles.scss';
 import Param from '../Param';
-import ClockIcon from './img/clock.svg';
+import clockIcon from './icons/icon.svg';
 
 
 export default ({ children, className }) => <Param
-  backgroundImage={ClockIcon}
+  backgroundImage={clockIcon}
   iconClassName={styles.icon}
   className={className}
 >

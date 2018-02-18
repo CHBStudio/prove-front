@@ -1,10 +1,10 @@
 import styles from './styles.scss';
 import Param from '../Param';
-import VideoIcon from './img/video.svg';
+import videoUrl from './icons/icon.svg';
 
 
 export default ({ children, className }) => <Param
-  backgroundImage={VideoIcon}
+  backgroundImage={videoUrl}
   iconClassName={styles.icon}
   className={className}
 >
