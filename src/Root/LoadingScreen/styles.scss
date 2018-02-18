@@ -1,0 +1,30 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10000000000;
+
+  transition: opacity $anim-normal, pointer-events $anim-normal;
+  opacity: 1;
+
+  &Hidden{
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.spinner{
+  display: block;
+  position: absolute;
+  height: $size-big;
+  width: $size-big;
+  left: calc(50% - #{$size-big/2});
+  top: calc(50% - #{$size-big/2});
+}

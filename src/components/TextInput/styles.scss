@@ -1,0 +1,41 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  margin-bottom: $indent-normal;
+}
+
+.title{
+  display: block;
+  position: relative;
+  font-size: $font-size-small;
+  color: $color-black;
+  margin-bottom: $indent-micro;
+}
+
+.input{
+  display: block;
+  position: relative;
+  height: auto;
+  width: $input-normal-width;
+  border: 2px solid $color-gray;
+  border-radius: $border-radius-small;
+  transition: border-color $anim-normal;
+  font-size: $font-size-normal;
+  padding: $indent-small;
+  color: $color-black;
+
+  &:focus {
+    border-color: $color-pink;
+  }
+}
+
+.errorMessage{
+  display: block;
+  position: relative;
+  margin-top: $indent-small;
+  color: $color-pink-light;
+  font-size: $font-size-small;
+}

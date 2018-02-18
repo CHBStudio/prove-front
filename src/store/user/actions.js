@@ -1,19 +1,14 @@
-export const USER__GET_LOAD = 'USER__GET_LOAD';
-export const USER__GET_LOADED = 'USER__GET_LOADED';
-export const USER__GET_ERROR = 'USER__GET_ERROR';
-
+export const USER__GET_STATUS = 'USER__GET_LOAD';
 export const USER__SET_DATA = 'USER__SET_DATA';
+export const USER__LOGOUT = 'USER__LOGOUT';
 
 
-export const userGet = () => ({
-  type: USER__GET_LOAD,
-});
-export const userGetLoaded = () => ({
-  type: USER__GET_LOADED,
-});
-export const userGetError = () => ({
-  type: USER__GET_ERROR,
-});
+export const userGet = (status) => {
+  return {
+    type: USER__GET_STATUS,
+    status,
+  };
+};
 
 export const userSetData = (isLoggedIn, data) => ({
   type: USER__SET_DATA,
@@ -21,23 +16,22 @@ export const userSetData = (isLoggedIn, data) => ({
   isLoggedIn,
 });
 
+export const userLogout = () => ({
+  type: USER__LOGOUT,
+});
+
 
 const actions = {
   userGet,
-  userGetError,
-  userGetLoaded,
-
   userSetData,
+  userLogout,
 };
 
 
 export default {
-  USER__GET_LOAD,
-  USER__GET_ERROR,
-  USER__GET_LOADED,
-
+  USER__GET_STATUS,
   USER__SET_DATA,
-
+  USER__LOGOUT,
 
   actions,
 }

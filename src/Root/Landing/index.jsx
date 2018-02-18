@@ -3,9 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import scrollToComponent from 'react-scroll-to-component';
 
 import urls from 'config/urls';
-import connect from 'utils/connect';
 import history from 'utils/history';
-import { user } from 'store';
 
 import Header from './Header';
 import About from './About';
@@ -18,11 +16,12 @@ import Results from './Results';
 import styles from './styles.scss';
 
 
-@connect({ user })
 class Landing extends Component{
 
   static propTypes = {
     pageName: propTypes.string,
+    landing: propTypes.object.isRequired,
+    user: propTypes.object.isRequired,
   };
 
   static defaultProps = {
@@ -77,15 +76,29 @@ class Landing extends Component{
   pageRef = pageName => ref => this.pageRefs[pageName] = ref;
 
   render(){
+    const { courses, faqs, results } = this.props.landing.data;
+
     return <div className={styles.root}>
       <Header onClickLink={this.scrollToPage}/>
       <div className={styles.screensContainer}>
         <About pageRef={this.pageRef(urls.LANDING_PAGES.about)} onEnter={this.changeUrl(urls.LANDING_PAGES.about)}/>
-        <Programs pageRef={this.pageRef(urls.LANDING_PAGES.coach)} onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}/>
+        <Programs
+          pageRef={this.pageRef(urls.LANDING_PAGES.coach)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.coach)}
+          programs={courses}
+        />
         <Advantages/>
         <Coach/>
-        <FAQ pageRef={this.pageRef(urls.LANDING_PAGES.faq)} onEnter={this.changeUrl(urls.LANDING_PAGES.faq)}/>
-        <Results pageRef={this.pageRef(urls.LANDING_PAGES.results)} onEnter={this.changeUrl(urls.LANDING_PAGES.results)}/>
+        <FAQ
+          pageRef={this.pageRef(urls.LANDING_PAGES.faq)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.faq)}
+          questions={faqs}
+        />
+        <Results
+          pageRef={this.pageRef(urls.LANDING_PAGES.results)}
+          onEnter={this.changeUrl(urls.LANDING_PAGES.results)}
+          results={results}
+        />
       </div>
     </div>
   }
@@ -96,10 +109,10 @@ class Landing extends Component{
 }
 
 
-export default () => {
+export default ({ user, landing }) => {
   return <Switch>
     <Route path={`${urls.landing}/:pageName`} render={
-      props => <Landing pageName={props.match.params.pageName}/>
+      props => <Landing pageName={props.match.params.pageName} user={user} landing={landing}/>
     }/>
     <Redirect to={urls.landingAbout}/>
   </Switch>

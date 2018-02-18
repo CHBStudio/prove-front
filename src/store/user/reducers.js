@@ -4,7 +4,7 @@ import actions from './actions';
 
 
 const initialState = {
-  isLoading: false,
+  isLoading: true,
   isError: false,
   isLoaded: false,
   isLoggedIn: false,
@@ -12,28 +12,12 @@ const initialState = {
 };
 
 const actionsMap = {
-  [actions.USER__GET_LOAD]: (state) => {
+  [actions.USER__GET_STATUS]: (state, { status='loading' }) => {
     return update(state, {
-      isLoading: { $set: true },
-      isError: { $set: false },
-      isLoaded:{ $set: false },
+      isLoading: { $set: status === 'loading' },
+      isError: { $set: status === 'error' },
+      isLoaded:{ $set: status === 'loaded' },
     });
-  },
-
-  [actions.USER__GET_ERROR]: (state) => {
-    return update(state, {
-      isLoading: { $set: false },
-      isError: { $set: true },
-      isLoaded:{ $set: false },
-    });
-  },
-
-  [actions.USER__GET_LOADED]: (state) => {
-    return update(state, {
-      isLoading: { $set: false },
-      isError: { $set: false },
-      isLoaded:{ $set: true },
-    })
   },
 
   [actions.USER__SET_DATA]: (state, { isLoggedIn, data }) => {

@@ -2,26 +2,39 @@ import api from 'config/api';
 import saga from 'utils/saga';
 import request from 'utils/request';
 
-import actions from './actions';
+import actions, { userGet, userSetData, } from './actions';
 
 
-const userGet = saga(async (store, action) => {
+const userGetSaga = saga(async (store, action, dispatch) => {
+  const { response, error } = await request(api.userGet);
 
-  const { response, error } = await request(api.landingGet);
+  if(response){
+    const { user=null } = response.data;
+    dispatch(userSetData(Boolean(user), user));
+    dispatch(userGet('loaded'));
+    return;
+  }
 
-  console.warn(response);
-  console.warn(error);
-
-  // console.log('dispatching', action);
-  // let result = next(action);
-  // console.log('next state', store.getState());
-  // return result;
+  dispatch(userGet('error'));
+}, actions.USER__GET_STATUS);
 
 
+const userLogout = saga(async (store, action, dispatch) => {
+  dispatch(userGet('loading'));
 
-}, actions.USER__GET_LOAD);
+  const { response, error } = await request(api.userLogout, 'POST');
+
+  if(response){
+    dispatch(userSetData(false, null));
+    dispatch(userGet('loaded'));
+    return;
+  }
+
+  dispatch(userGet('error'));
+}, actions.USER__LOGOUT);
 
 
 export default [
-  userGet,
+  userGetSaga,
+  userLogout,
 ]

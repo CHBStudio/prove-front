@@ -8,7 +8,8 @@ import styles from './styles.scss';
 export default class extends Component{
 
   static propTypes = {
-    title: propTypes.string,
+    title: propTypes.string.isRequired,
+    text: propTypes.string.isRequired,
   };
 
   constructor(props){
@@ -38,14 +39,14 @@ export default class extends Component{
   render(){
     const { didMount, isOpen } = this.state;
 
-    const text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi assumenda, autem beatae cum delectus doloribus eveniet harum in inventore mollitia nemo, nulla possimus quia repellat rerum, voluptatum. Laborum, voluptates!';
+    const { title, text } = this.props;
 
     return <div
       className={styles.root}
     >
       <div className={styles.topBar} onClick={this.toggle}>
         <Title tag="h3" className={styles.title}>
-          { this.props.title }
+          { title }
         </Title>
         <div className={cn(styles.line, isOpen && styles.lineActive)}/>
       </div>

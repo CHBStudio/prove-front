@@ -3,13 +3,15 @@ import propTypes from 'prop-types';
 import urls from 'config/urls';
 import RedButton from 'components/RedButton';
 import Button from 'components/Button';
+import { modals, user } from 'store';
+import connect from 'utils/connect';
 
 import Link from './Link';
 
 import styles from './styles.scss';
 
 
-
+@connect({ modals, user })
 export default class extends Component{
 
   static propTypes = {
@@ -22,57 +24,49 @@ export default class extends Component{
 
   constructor(props){
     super(props);
-
-    this.state = {
-      showHeader: false,
-      showHeaderTimeout: true,
-    };
-
-    this.timeoutObj = null;
   }
 
-  componentDidMount(){
-    this.timeoutObj = setTimeout(() => this.setState({ showHeaderTimeout: false }), 2000);
+  openLoginModal = () => this.props.actions.modals.openModal('login');
 
-    window.addEventListener('mousemove', this.mouseMoveListener);
-  }
-
-  mouseMoveListener = (e) => {
-    if(window.innerHeight / e.screenY > 3 && !this.state.showHeader){
-      this.setState({ showHeader: true });
-      return;
-    }
-
-    if(window.innerHeight / e.screenY <= 3 && this.state.showHeader){
-      this.setState({ showHeader: false });
-      return;
-    }
-  };
+  openRegModal = () => this.props.actions.modals.openModal('registration');
 
   render(){
-    const { showHeader, showHeaderTimeout } = this.state;
+
+    const { user } = this.props.store;
+
+    const rightGroupToLogin = <div className={styles.rightGroup}>
+      <RedButton
+        className={styles.regButton}
+        onClick={this.openRegModal}
+      >Регистрация</RedButton>
+      <Button
+        className={styles.enterButton}
+        onClick={this.openLoginModal}
+      >Вход</Button>
+    </div>;
+
+
+    const rightGroupForUser = <div className={styles.rightGroup}>
+      <RedButton
+        className={styles.regButton}
+      >Личный кабинет</RedButton>
+      <Button
+        className={styles.enterButton}
+        onClick={this.props.actions.user.userLogout}
+      >Выход</Button>
+    </div>;
+
+
     const onClick = pageName => () => this.props.onClickLink(pageName);
-    return <header className={cn(styles.root, !showHeaderTimeout && !showHeader && styles.rootHidden)}>
+    return <header className={styles.root}>
       <div className={styles.logo}/>
+
       <Link onClick={onClick(urls.LANDING_PAGES.about)} to={urls.landingAbout}>Программы</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.coach)} to={urls.landingCoach}>О тренере</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.faq)} to={urls.landingFaq}>FAQ</Link>
       <Link onClick={onClick(urls.LANDING_PAGES.results)} to={urls.landingResults}>Результаты</Link>
-
-      <div className={styles.rightGroup}>
-        <RedButton className={styles.regButton}>Регистрация</RedButton>
-        <Button className={styles.enterButton}>Вход</Button>
-      </div>
+      { user.isLoggedIn ? rightGroupForUser : rightGroupToLogin }
     </header>
 
-  }
-
-  componentWillUnmount(){
-    window.removeEventListener('mousemove', this.mouseMoveListener);
-
-    if(this.timeoutObj){
-      clearTimeout(this.timeoutObj);
-      this.timeoutObj = null;
-    }
   }
 }

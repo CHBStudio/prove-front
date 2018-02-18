@@ -1,0 +1,54 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: $color-ghost-gray;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  transition: opacity $anim-normal, pointer-events $anim-normal;
+
+  &Hidden{
+    opacity: 0;
+    pointer-events: none;
+
+    .container{
+      transform: translateY(100%);
+    }
+  }
+}
+
+.container{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform $anim-normal;
+}
+
+.body{
+  display: block;
+  position: relative;
+  max-width: 700px;
+  width: auto;
+  margin: auto;
+  height: auto;
+  padding: $indent-big;
+  background-color: #fff;
+  border-radius: $border-radius-small;
+}
+
+.clickZone{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

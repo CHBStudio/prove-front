@@ -1,0 +1,17 @@
+@import "src/Root/vars";
+
+
+.title{
+  display: block;
+  position: relative;
+  margin-bottom: $indent-big;
+}
+
+.errorMessage{
+  display: block;
+  position: relative;
+  max-width: $input-normal-width;
+  margin-top: $indent-normal;
+  font-size: $font-size-small;
+  color: $color-pink-light;
+}
