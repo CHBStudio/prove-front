@@ -19,10 +19,10 @@ export default class extends Component{
     super(props);
   }
 
-  componentWillMount(){
+  componentWillMount () {
     this.props.actions.user.userGet();
     this.props.actions.landing.landingGet();
-  }
+  };
 
   render(){
 
