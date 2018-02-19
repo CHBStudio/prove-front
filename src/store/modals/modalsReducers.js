@@ -1,6 +1,6 @@
 import update from 'immutability-helper';
 
-import actions from './actions';
+import actions from './modalsActions';
 
 
 const modalInitialState = {

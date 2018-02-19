@@ -2,7 +2,7 @@ import api from 'config/api';
 import saga from 'utils/saga';
 import request from 'utils/request';
 
-import actions, { userGet, userSetData, } from './actions';
+import actions, { userGet, userSetData, } from './userActions';
 
 
 const userGetSaga = saga(async (store, action, dispatch) => {

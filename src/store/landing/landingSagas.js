@@ -2,7 +2,7 @@ import api from 'config/api';
 import saga from 'utils/saga';
 import request from 'utils/request';
 
-import actions, { landingGet, landingSet } from './actions';
+import actions, { landingGet, landingSet } from './landingActions';
 
 
 const landingGetSaga = saga(async (store, action, dispatch) => {

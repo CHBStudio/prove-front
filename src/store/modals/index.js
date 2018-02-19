@@ -1,6 +1,6 @@
-import actions from './actions';
-import reducers from './reducers';
-import sagas from './sagas';
+import actions from './modalsActions';
+import reducers from './modalsReducers';
+import sagas from './modalsSagas';
 
 
 export default {
