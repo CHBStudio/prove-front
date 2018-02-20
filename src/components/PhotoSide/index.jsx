@@ -5,7 +5,6 @@ import styles from './styles.scss';
 
 export default ({
   backgroundImage,
-  children,
   className,
   onClick=()=>{},
   side='left',
@@ -20,6 +19,11 @@ export default ({
   )}
   onClick={onClick}
 >
+  <div className={cn(
+    styles.hoverZone,
+    side === 'left' && styles.hoverZoneLeft,
+    side === 'right' && styles.hoverZoneRight,
+  )}/>
   <div className={styles.photoWrapper}>
     <div
       className={styles.photo}

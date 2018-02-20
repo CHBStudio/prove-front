@@ -42,6 +42,23 @@
   }
 }
 
+.hoverZone{
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: calc(#{$indent-giant} + #{$indent-big});
+  height: 100%;
+  background-color: transparent;
+
+  &Left{
+    left: calc(-#{$indent-giant} - #{$indent-big});
+  }
+
+  &Right{
+    right: calc(-#{$indent-giant} - #{$indent-big});
+  }
+}
+
 .photoWrapper,
 .photo{
   display: block;

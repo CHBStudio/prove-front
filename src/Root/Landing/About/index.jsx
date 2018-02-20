@@ -2,9 +2,10 @@ import propTypes from 'prop-types';
 
 import Title from 'components/Title';
 import Button from 'components/Button';
-import PlayButton from 'components/PlayButton';
+import PhotoSide from 'components/PhotoSide';
 
 import BaseScreen from '../components/BaseScreen';
+import coverUrl from './img/cover.jpg';
 
 import styles from './styles.scss';
 
@@ -55,15 +56,13 @@ export default class extends Component {
 
   render(){
     const { pageRef, onEnter, scrollToPrograms } = this.props;
-    const { leftSideWidth, windowHeight, imageHeight, imageWidth } = this.state;
+    const { leftSideWidth, windowHeight, imageWidth } = this.state;
 
     return <BaseScreen pageRef={pageRef} onEnter={onEnter} className={styles.root} noListen={true} height={windowHeight}>
       <div className={styles.container} ref={ref => this.containerRef = ref}>
         <div className={styles.leftSide} style={{ width: `${leftSideWidth}px` }}>
           <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
-          <br/>
-          <br/>
+          <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
           <Button onClick={scrollToPrograms}>Заниматься прямо сейчас</Button>
         </div>
         <div
@@ -71,10 +70,11 @@ export default class extends Component {
           style={{ width: `${imageWidth}px`}}
           ref={ref => this.rightSideRef = ref}
         >
-          <PlayButton className={styles.playButton}/>
-          <div className={styles.coverWrapper}>
-            <div className={styles.cover}/>
-          </div>
+          <PhotoSide
+            backgroundImage={coverUrl}
+            className={styles.photo}
+            side='right'
+          />
         </div>
       </div>
     </BaseScreen>
