@@ -15,11 +15,11 @@
   display: block;
   position: relative;
   width: 100%;
-  height: calc(#{$size-big} * 2);
+  height: calc(#{$size-big} * 1.5);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: pink;
+  background-color: transparent;
 }
 
 .title{

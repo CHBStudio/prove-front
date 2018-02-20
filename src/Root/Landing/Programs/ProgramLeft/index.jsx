@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import Title from 'components/Title';
 import pluralizer from 'utils/pluralizer';
 import PhotoSide from 'components/PhotoSide';
+import VideoContainer from 'components/VideoContainer';
 
 import GoToProgram from '../components/GotToProgram';
 import ProgramSection from '../components/ProgramSection';
@@ -10,7 +11,6 @@ import DescriptionSide from '../components/DescriptionSide';
 import Params from '../components/Params';
 import List from '../components/List';
 import Price from '../components/Price';
-import VideoContainer from '../components/VideoContainer';
 
 
 import styles from './styles.scss';

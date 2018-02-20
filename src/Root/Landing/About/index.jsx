@@ -3,9 +3,11 @@ import propTypes from 'prop-types';
 import Title from 'components/Title';
 import Button from 'components/Button';
 import PhotoSide from 'components/PhotoSide';
+import VideoContainer from 'components/VideoContainer';
 
 import BaseScreen from '../components/BaseScreen';
 import coverUrl from './img/cover.jpg';
+import videoUrl from './video/small.mp4';
 
 import styles from './styles.scss';
 
@@ -28,6 +30,8 @@ export default class extends Component {
       leftSideWidth: 0,
       windowHeight: window.innerHeight,
       imageWidth: 0,
+
+      showVideo: false,
     }
   }
 
@@ -54,13 +58,17 @@ export default class extends Component {
     this.fit();
   }
 
+  openVideo = () => this.setState({ showVideo: true });
+
+  closeVideo = () => this.setState({ showVideo: false });
+
   render(){
     const { pageRef, onEnter, scrollToPrograms } = this.props;
-    const { leftSideWidth, windowHeight, imageWidth } = this.state;
+    const { leftSideWidth, windowHeight, imageWidth, showVideo } = this.state;
 
     return <BaseScreen pageRef={pageRef} onEnter={onEnter} className={styles.root} noListen={true} height={windowHeight}>
       <div className={styles.container} ref={ref => this.containerRef = ref}>
-        <div className={styles.leftSide} style={{ width: `${leftSideWidth}px` }}>
+        <div className={cn(styles.leftSide, showVideo && styles.leftSideHidden)} style={{ width: `${leftSideWidth}px` }}>
           <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
           <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
           <Button onClick={scrollToPrograms}>Заниматься прямо сейчас</Button>
@@ -74,8 +82,16 @@ export default class extends Component {
             backgroundImage={coverUrl}
             className={styles.photo}
             side='right'
+            onClick={this.openVideo}
+            isHidden={showVideo}
           />
         </div>
+        <VideoContainer
+          isHidden={!showVideo}
+          src={videoUrl}
+          onClose={this.closeVideo}
+          className={styles.videoContainer}
+        />
       </div>
     </BaseScreen>
   }

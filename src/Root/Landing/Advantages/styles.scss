@@ -1,8 +1,13 @@
 @import "src/Root/vars";
 
 
+.root{
+  padding: $indent-giant 0;
+}
+
 .title{
   font-size: $font-size-giant;
+  padding: 0 $indent-giant;
 }
 
 .cover{
@@ -19,4 +24,5 @@
   margin-top: $indent-big;
   width: 100%;
   height: auto;
+  padding: 0 $indent-giant;
 }

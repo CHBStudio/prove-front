@@ -26,4 +26,6 @@
   margin: 0 auto;
   height: 100%;
   width: auto;
+  max-width: calc(100% - #{$size-small * 2} - #{$indent-big * 2});
+  max-height: 100%;
 }
