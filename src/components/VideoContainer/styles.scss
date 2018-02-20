@@ -15,9 +15,24 @@
   }
 }
 
-.closeBnt{
+.controlPannel{
+  display: block;
+  position: absolute;
+  height: auto;
+  width: auto;
+  top: 50%;
   right: 0;
-  top: 0;
+  transform: translateY(-50%);
+}
+
+.controlBtn{
+  display: block;
+  position: relative;
+  margin-bottom: $indent-normal;
+
+  &:last-of-type{
+    margin-bottom: 0;
+  }
 }
 
 .video{

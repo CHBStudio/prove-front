@@ -1,0 +1,12 @@
+<svg width="70px" height="55px" viewBox="0 0 70 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-2138.000000, -6769.000000)" stroke="#FFFFFF" stroke-width="5">
+            <g id="Speaker_Icon" transform="translate(2141.000000, 6771.000000)">
+                <polygon id="polygon1" fill="#FFFFFF" fill-rule="nonzero" stroke-linejoin="round" points="33.389 0.769 16.235 15.606 0 15.606 0 34.699 15.989 34.699 33.389 49.75"></polygon>
+                <path d="M42.128,36.03 C44.057,32.934 45.19,29.291 45.19,25.377 C45.19,21.399 44.026,17.703 42.043,14.577" id="path1" stroke-linecap="round"></path>
+                <path d="M49.082,7.537 C52.777,12.523 54.966,18.694 54.966,25.377 C54.966,31.998 52.815,38.115 49.178,43.076" id="path2" stroke-linecap="round"></path>
+                <path d="M55.71,49.611 C60.977,42.945 64.128,34.531 64.128,25.378 C64.128,16.161 60.936,7.696 55.609,1.01" id="path1" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
