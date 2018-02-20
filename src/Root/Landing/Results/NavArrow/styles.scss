@@ -9,7 +9,7 @@
   cursor: pointer;
   transition: transform $anim-normal;
 
-  top: calc(#{-$size-small} + #{-$indent-big});
+  top: calc(#{-$size-small/2} + #{-$indent-giant/2});
 
   z-index: 3;
 
@@ -19,7 +19,7 @@
 
   &Left{
     transform: rotate(0deg);
-    right: calc(50% - #{$size-small/2} - #{$indent-big});
+    left: calc(#{$indent-giant * 2});
 
     &:hover{
       transform: scale(1.05);
@@ -28,7 +28,7 @@
 
   &Right{
     transform: rotate(180deg);
-    left: calc(50% - #{$size-small/2} - #{$indent-big});
+    left: $indent-giant;
 
     &:hover{
       transform: scale(1.05) rotate(180deg);
