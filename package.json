@@ -48,7 +48,7 @@
     "express": "^4.16.2",
     "http-proxy-middleware": "^0.17.4",
     "node-sass": "^4.7.2",
-    "parcel-bundler": "^1.5.1",
+    "parcel-bundler": "^1.6.2",
     "postcss-modules": "^1.1.0",
     "rimraf": "^2.6.2"
   }
