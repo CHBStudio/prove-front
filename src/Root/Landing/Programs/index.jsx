@@ -1,8 +1,8 @@
 import Title from 'components/Title';
 
 import BaseScreen from '../components/BaseScreen';
-import ProgramLeft from './ProgramLeft';
 import ProgramRight from './ProgramRight';
+import ProgramLeft from './ProgramLeft';
 
 import styles from './styles.scss';
 

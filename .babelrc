@@ -5,7 +5,8 @@
       { "src": "./src/utils", "expose": "utils" },
       { "src": "./src/store", "expose": "store" },
       { "src": "./src/config", "expose": "config" },
-      { "src": "./src/components", "expose": "components" }
+      { "src": "./src/components", "expose": "components" },
+      { "src": "./src/Root", "expose": "root" }
     ]],
     ["provide-modules", {
       "react": {

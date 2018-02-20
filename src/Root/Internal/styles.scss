@@ -1,0 +1,52 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.leftBar{
+  display: inline-block;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: $left-bar-width;
+  background-color: #fff;
+  padding: $indent-big;
+  vertical-align: top;
+  z-index: 2;
+}
+
+.link{
+  margin-bottom: $indent-normal-big;
+  font-size: $font-size-normal-big;
+  font-family: $font-family-roboto-condesed;
+
+  &Active{
+    color: $color-pink;
+  }
+}
+
+.content{
+  display: inline-block;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  background-color: #fff;
+  vertical-align: top;
+  padding: $indent-big $indent-big $indent-big calc(#{$indent-big + $left-bar-width});
+  z-index: 1;
+  overflow: hidden;
+}
+
+.mainPage{
+  margin-top: $indent-big;
+}
+
+.logout{
+  margin-top: $indent-normal;
+}

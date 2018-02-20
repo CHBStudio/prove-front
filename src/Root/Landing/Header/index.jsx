@@ -54,6 +54,7 @@ export default class extends Component{
     const rightGroupForUser = <div className={styles.rightGroup}>
       <SmallRedButton
         className={styles.regButton}
+        onClick={() => history.push(urls.internal)}
       >Личный кабинет</SmallRedButton>
       <SmallButton
         className={styles.enterButton}

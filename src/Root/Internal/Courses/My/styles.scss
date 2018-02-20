@@ -1,0 +1,12 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+}
+
+.program{
+  margin-top: 0;
+  margin-bottom: $indent-big;
+}

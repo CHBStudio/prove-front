@@ -20,6 +20,24 @@ export const landingFaq = `${landing}/${LANDING_PAGES.faq}`;
 export const landingResults = `${landing}/${LANDING_PAGES.results}`;
 
 
+export const internal = '/internal';
+
+export const INTERNAL_PAGES = {
+  courses: 'courses',
+};
+
+
+
+export const internalCourses = `${internal}/${INTERNAL_PAGES.courses}`;
+
+export const INTERNAL_COURSES_PAGES = {
+  my: 'my',
+  all: 'all',
+};
+
+export const internalCoursesMy = `${internal}/${INTERNAL_PAGES.courses}/${INTERNAL_COURSES_PAGES.my}`;
+export const internalCoursesAll = `${internal}/${INTERNAL_PAGES.courses}/${INTERNAL_COURSES_PAGES.all}`;
+
 
 export default {
     root,
@@ -35,4 +53,16 @@ export default {
     landingCoach,
     landingFaq,
     landingResults,
+
+
+    internal,
+
+    INTERNAL_PAGES,
+
+    internalCourses,
+
+    INTERNAL_COURSES_PAGES,
+
+    internalCoursesMy,
+    internalCoursesAll,
 }

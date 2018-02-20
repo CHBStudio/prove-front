@@ -23,6 +23,11 @@ export default class extends Component{
     isLoggedIn: propTypes.bool,
     data: propTypes.object.isRequired,
     userHasThisProgram: propTypes.bool.isRequired,
+    className: propTypes.string,
+  };
+
+  static defaultProps = {
+    className: '',
   };
 
   constructor(props){
@@ -40,9 +45,9 @@ export default class extends Component{
   render(){
     const { showVideo } = this.state;
 
-    const { data, userHasThisProgram, isLoggedIn } = this.props;
+    const { data, userHasThisProgram, isLoggedIn, className } = this.props;
 
-    return <ProgramSection>
+    return <ProgramSection className={className}>
       <PhotoSide
         backgroundImage={'/' + data.photo}
         side="left"

@@ -12,3 +12,10 @@ html, body, :global(#root) {
   height: 100%;
   min-width: $page-width-desktop-min;
 }
+
+.root{
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
