@@ -2,12 +2,7 @@
 
 
 .root{
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.slider{
-  //width: calc(100% - #{$indent-giant});
+  padding: $indent-giant 0 0 0;
 }
 
 .title{
@@ -19,10 +14,4 @@
 .slideWrapper{
   display: block;
   position: relative;
-  //border-right: calc(#{$indent-giant}) solid #fff;
-  //border-left: calc(#{$indent-giant}) solid #fff;
-  //
-  //&:nth-of-type(2n){
-  //  border: none;
-  //}
 }

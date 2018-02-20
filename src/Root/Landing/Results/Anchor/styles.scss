@@ -1,0 +1,22 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  padding: $indent-giant $indent-giant calc(#{$indent-giant * 2}) $indent-giant;
+  text-align: center;
+  margin-top: calc(#{$indent-giant * 1});
+}
+
+.title{
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: $indent-big;
+}
+
+.button{
+
+}

@@ -6,11 +6,12 @@ import BaseScreen from '../components/BaseScreen';
 
 import Card from './Card';
 import NavArrow from './NavArrow';
+import Anchor from './Anchor';
 
 import styles from './styles.scss';
 
 
-export default ({ pageRef, onEnter, results }) => {
+export default ({ pageRef, onEnter, results, scrollToPrograms }) => {
   const LeftArrow = NavArrow('left');
   const RightArrow = NavArrow('right');
 
@@ -48,5 +49,6 @@ export default ({ pageRef, onEnter, results }) => {
         </div>)
       }
     </Slider>
+    <Anchor scrollToPrograms={scrollToPrograms}/>
   </BaseScreen>
 }

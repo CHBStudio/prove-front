@@ -112,6 +112,7 @@ class Landing extends Component{
           pageRef={this.pageRef(urls.LANDING_PAGES.results)}
           onEnter={this.changeUrl(urls.LANDING_PAGES.results)}
           results={results}
+          scrollToPrograms={scrollToPrograms}
         />
       </div>
     </div>
