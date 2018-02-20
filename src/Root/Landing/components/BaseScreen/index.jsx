@@ -12,6 +12,8 @@ export default class extends Component{
     className: propTypes.string,
     onEnter: propTypes.func,
     save: propTypes.bool,
+    noListen: propTypes.bool,
+    height: propTypes.number,
   };
 
   static defaultProps = {
@@ -20,6 +22,8 @@ export default class extends Component{
     className: '',
     onEnter: () => {},
     save: false,
+    noListen: false,
+    height: null,
   };
 
   constructor(props){
@@ -29,9 +33,7 @@ export default class extends Component{
 
     this.state = {
       needSecondWaypoint: false,
-      screenHeight: 0,
       width: 0,
-      height: 0,
     };
   }
 
@@ -42,20 +44,20 @@ export default class extends Component{
 
   onResize = () => {
     const height = window.innerHeight;
-    const width = window.innerWidth;
     let needSecondWaypoint = false;
-    let screenHeight = 0;
 
     if(this.ref && this.props.save){
-      screenHeight = this.ref.offsetHeight;
+      const screenHeight = this.ref.offsetHeight;
       needSecondWaypoint = screenHeight > height;
     }
 
-    this.setState({ needSecondWaypoint, height, width, screenHeight });
+    this.setState({ needSecondWaypoint, height });
   };
 
   componentWillMount(){
-    window.addEventListener('resize', this.onResize);
+    if(!this.props.noListen){
+      window.addEventListener('resize', this.onResize);
+    }
   }
 
   componentDidMount(){
@@ -64,8 +66,10 @@ export default class extends Component{
 
   render(){
 
-    const { onEnter, className, children, save } = this.props;
-    const { needSecondWaypoint, height } = this.state;
+    const { onEnter, className, children, save, noListen, height: propHeight } = this.props;
+    const { needSecondWaypoint, height: stateHeight } = this.state;
+
+    const height = noListen ? propHeight : stateHeight;
 
     const firstWaypointStyle = needSecondWaypoint ? { top: `${height/2}px` } : { top: '50%' };
     const secondWaypointStyle = { bottom: `${height/2}px` };
@@ -98,7 +102,9 @@ export default class extends Component{
   }
 
   componentWillUnmount(){
-    window.removeEventListener('resize', this.onResize);
+    if(!this.props.noListen){
+      window.removeEventListener('resize', this.onResize);
+    }
   }
 }
 

@@ -2,10 +2,10 @@ import propTypes from 'prop-types';
 
 import Title from 'components/Title';
 import pluralizer from 'utils/pluralizer';
+import PhotoSide from 'components/PhotoSide';
 
 import GoToProgram from '../components/GotToProgram';
 import ProgramSection from '../components/ProgramSection';
-import PhotoSide from '../components/PhotoSide';
 import DescriptionSide from '../components/DescriptionSide';
 import Params from '../components/Params';
 import List from '../components/List';

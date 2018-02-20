@@ -79,12 +79,15 @@ class Landing extends Component{
     const { user, landing } = this.props;
     const { courses, faqs, results } = landing.data;
 
+    const scrollToPrograms = () => this.scrollToPage(urls.LANDING_PAGES.programs);
+
     return <div className={styles.root}>
       <Header onClickLink={this.scrollToPage}/>
       <div className={styles.screensContainer}>
         <About
           pageRef={this.pageRef(urls.LANDING_PAGES.about)}
           onEnter={this.changeUrl(urls.LANDING_PAGES.about)}
+          scrollToPrograms={scrollToPrograms}
         />
         <Programs
           pageRef={this.pageRef(urls.LANDING_PAGES.programs)}

@@ -1,6 +1,17 @@
 @import "src/Root/vars";
 
 
+.root{
+  text-align: right;
+}
+
+.container{
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .mainTitle{
   font-size: $font-size-giant;
   margin-bottom: $indent-big;
@@ -10,8 +21,7 @@
 .leftSide{
   display: inline-block;
   position: relative;
-  width: calc(50% - #{$indent-giant});
-  margin-right: $indent-giant;
+  padding-right: $indent-giant;
   vertical-align: top;
   top: 50%;
   transform: translateY(-50%);
@@ -19,21 +29,24 @@
 }
 
 .rightSide{
-  display: block;
-  position: absolute;
-  width: 50%;
-  right: 0;
-  top: 0;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: auto;
   height: 100%;
   background-image: url("./img/cover.jpg");
   background-position: center;
   background-size: contain;
-  background-color: #ccc;
+  background-repeat: no-repeat;
+
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .playButton{
   display: block;
   position: absolute;
   bottom: $indent-giant;
-  left: $indent-giant;
+  left: calc(-#{$size-big}/2);
+  z-index: 1;
 }
