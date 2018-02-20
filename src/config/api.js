@@ -7,4 +7,6 @@ export default {
   userLogout: `${api}/user/logout`,
 
   landingGet: `${api}/landing/get`,
+
+  courseGoToPay: courseId => `${api}/course/pay?id=${courseId}`,
 }

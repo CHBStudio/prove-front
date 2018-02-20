@@ -8,6 +8,7 @@ import styles from './styles.scss';
 
 
 export default ({ pageRef, onEnter, programs, user }) => {
+  const { isLoggedIn } = user;
   return <BaseScreen
     pageRef={pageRef}
     onEnter={onEnter}
@@ -15,10 +16,21 @@ export default ({ pageRef, onEnter, programs, user }) => {
   >
     <Title className={styles.mainTitle} tag="h2">Программы</Title>
     { programs.map((program, index) => {
-      const userHasThisProgram = user.isLoggedIn && user.data.courses.indexOf(program.id) >= 0;
+      const userHasThisProgram = isLoggedIn && user.data.courses.indexOf(program.id) >= 0;
       return index % 2 === 0 ?
-      <ProgramLeft key={index} data={program} userHasThisProgram={userHasThisProgram}/> :
-      <ProgramRight key={index} data={program} userHasThisProgram={userHasThisProgram}/>
+      <ProgramLeft
+        key={index}
+        data={program}
+        userHasThisProgram={userHasThisProgram}
+        isLoggedIn={isLoggedIn}
+      />
+        :
+      <ProgramRight
+        key={index}
+        data={program}
+        userHasThisProgram={userHasThisProgram}
+        isLoggedIn={isLoggedIn}
+      />
     })}
   </BaseScreen>
 }

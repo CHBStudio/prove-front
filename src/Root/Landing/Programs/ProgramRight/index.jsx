@@ -19,6 +19,7 @@ import styles from './styles.scss';
 export default class extends Component{
 
   static propTypes = {
+    isLoggedIn: propTypes.bool,
     data: propTypes.object.isRequired,
     userHasThisProgram: propTypes.bool.isRequired,
   };
@@ -38,7 +39,7 @@ export default class extends Component{
   render(){
     const { showVideo } = this.state;
 
-    const { data, userHasThisProgram } = this.props;
+    const { data, userHasThisProgram, isLoggedIn } = this.props;
 
     return <ProgramSection>
       <DescriptionSide
@@ -56,7 +57,15 @@ export default class extends Component{
           { data.description }
         </p>
         <List items={data.advanteges}/>
-        { userHasThisProgram ? <GoToProgram/> : <Price cost={`${data.cost} ₽`}/>}
+        { userHasThisProgram ?
+          <GoToProgram/>
+          :
+          <Price
+            courseId={data.id}
+            cost={`${data.cost} ₽`}
+            isLoggedIn={isLoggedIn}
+          />
+        }
       </DescriptionSide>
       <PhotoSide
         backgroundImage={'/' + data.photo}

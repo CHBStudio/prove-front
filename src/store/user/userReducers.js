@@ -9,6 +9,7 @@ const initialState = {
   isLoaded: false,
   isLoggedIn: false,
   data: null,
+  wannaCourseId: null,
 };
 
 const actionsMap = {
@@ -24,6 +25,12 @@ const actionsMap = {
     return update(state, {
       isLoggedIn: { $set: isLoggedIn },
       data: { $set: data }
+    });
+  },
+
+  [actions.USER__SET_WANNA_COURSE]: (state, { courseId }) => {
+    return update(state, {
+      wannaCourseId: { $set: courseId },
     });
   },
 };

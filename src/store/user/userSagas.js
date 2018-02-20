@@ -2,7 +2,7 @@ import api from 'config/api';
 import saga from 'utils/saga';
 import request from 'utils/request';
 
-import actions, { userGet, userSetData, } from './userActions';
+import actions, { userGet, userSetData, userSetWannaCourse } from './userActions';
 
 
 const userGetSaga = saga(async (store, action, dispatch) => {
@@ -26,6 +26,7 @@ const userLogout = saga(async (store, action, dispatch) => {
 
   if(response){
     dispatch(userSetData(false, null));
+    dispatch(userSetWannaCourse(null));
     dispatch(userGet('loaded'));
     return;
   }

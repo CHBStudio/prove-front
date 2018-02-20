@@ -1,8 +1,7 @@
 import propTypes from 'prop-types';
 
 import urls from 'config/urls';
-import RedButton from 'components/RedButton';
-import Button from 'components/Button';
+import { SmallButton, SmallRedButton } from 'components/SmallButtons';
 import { modals, user } from 'store';
 import connect from 'utils/connect';
 import history from 'utils/history';
@@ -41,25 +40,25 @@ export default class extends Component{
     const { user } = this.props.store;
 
     const rightGroupToLogin = <div className={styles.rightGroup}>
-      <RedButton
+      <SmallRedButton
         className={styles.regButton}
         onClick={this.openRegModal}
-      >Регистрация</RedButton>
-      <Button
+      >Регистрация</SmallRedButton>
+      <SmallButton
         className={styles.enterButton}
         onClick={this.openLoginModal}
-      >Вход</Button>
+      >Вход</SmallButton>
     </div>;
 
 
     const rightGroupForUser = <div className={styles.rightGroup}>
-      <RedButton
+      <SmallRedButton
         className={styles.regButton}
-      >Личный кабинет</RedButton>
-      <Button
+      >Личный кабинет</SmallRedButton>
+      <SmallButton
         className={styles.enterButton}
         onClick={this.props.actions.user.userLogout}
-      >Выход</Button>
+      >Выход</SmallButton>
     </div>;
 
 
