@@ -2,20 +2,6 @@
 
 
 .root{
-  display: block;
-  position: absolute;
-  height: $size-small;
-  width: $size-small;
-  border-radius: calc(#{$size-small/2});
-  background-color: $color-pink-light;
-  transition: background-color $anim-normal;
-  cursor: pointer;
   background-image: url("./reloadImg/reload.svg");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: 45%;
-
-  &:hover{
-    background-color: $color-pink;
-  }
 }

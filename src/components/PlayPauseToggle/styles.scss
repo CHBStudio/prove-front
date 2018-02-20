@@ -2,25 +2,11 @@
 
 
 .root{
-  display: block;
-  position: absolute;
-  height: $size-small;
-  width: $size-small;
-  border-radius: calc(#{$size-small/2});
-  background-color: $color-pink-light;
-  transition: background-color $anim-normal;
-  cursor: pointer;
   background-image: url("./img/pause.svg");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: 28%;
 
   &Paused{
     background-image: url("./img/play.svg");
     background-size: 35%;
-  }
-
-  &:hover{
-    background-color: $color-pink;
   }
 }
