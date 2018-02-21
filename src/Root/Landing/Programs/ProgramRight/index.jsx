@@ -63,7 +63,7 @@ export default class extends Component{
         </p>
         <List items={data.advanteges}/>
         { userHasThisProgram ?
-          <GoToProgram/>
+          <GoToProgram courseId={data.id}/>
           :
           <Price
             courseId={data.id}

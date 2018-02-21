@@ -1,0 +1,31 @@
+@import 'input-range-variables';
+@import 'input-range-slider';
+@import 'input-range-label';
+@import 'input-range-label-container';
+@import 'input-range-track';
+
+
+:global{
+  .input-range {
+    height: $input-range-slider-height;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.root{
+  display: block;
+  position: relative;
+  width: calc(100% - #{$indent-giant});
+  height: auto;
+  margin: $indent-normal 0 $indent-big 0;
+}
+
+.rootFullScreen{
+  margin-bottom: 0;
+  color: #fff;
+
+  :global(.input-range__label-container){
+    color: #fff;
+  }
+}

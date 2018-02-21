@@ -40,7 +40,7 @@ export default connect({ user })(({ actions }) => {
       </SmallRedButton>
       <br/>
       <SmallButton
-        onClick={actions.userLogout}
+        onClick={actions.user.userLogout}
         className={styles.logout}
       >
         Выйти

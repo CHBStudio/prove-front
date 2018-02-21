@@ -1,0 +1,23 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.button{
+  display: inline-block;
+  position: relative;
+  margin-right: $indent-small;
+  line-height: $size-small;
+  text-align: center;
+  color: #fff;
+  font-size: $font-size-small;
+
+  &Active{
+    background-color: $color-pink;
+  }
+}

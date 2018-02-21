@@ -9,4 +9,6 @@ export default {
   landingGet: `${api}/landing/get`,
 
   courseGoToPay: courseId => `${api}/course/pay?id=${courseId}`,
+
+  courseGet: `${api}/course/get`,
 }

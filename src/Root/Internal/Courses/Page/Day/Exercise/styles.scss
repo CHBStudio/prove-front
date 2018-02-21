@@ -1,0 +1,28 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: relative;
+  margin-top: $indent-giant;
+  width: 100%;
+  height: auto;
+}
+
+.videoContainer{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: $indent-normal;
+}
+
+.video{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: calc(100% - #{$indent-giant});
+  min-width: 0;
+  margin: 0;
+}

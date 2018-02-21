@@ -9,7 +9,12 @@ export default async (url, methodType = 'GET', data = {}, options={}) => {
     Object.assign(headers, { 'Content-Type': 'multipart/form-data' });
   }
   config.headers = headers;
-  config.data = data;
+
+  if(method === 'get'){
+    config.params = data;
+  }else{
+    config.data = data;
+  }
 
   const result = {
     response: null,

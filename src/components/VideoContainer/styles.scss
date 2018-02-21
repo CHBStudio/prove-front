@@ -13,6 +13,11 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  &Fullscreen{
+    padding-left: $indent-giant;
+    margin-bottom: 0 !important;
+  }
 }
 
 .controlPannel{
@@ -23,6 +28,10 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+}
+
+.controlPanneFullScreen{
+  right: calc(#{$indent-giant - $size-small}/2)
 }
 
 .controlBtn{

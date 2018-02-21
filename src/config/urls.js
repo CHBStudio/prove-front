@@ -33,10 +33,13 @@ export const internalCourses = `${internal}/${INTERNAL_PAGES.courses}`;
 export const INTERNAL_COURSES_PAGES = {
   my: 'my',
   all: 'all',
+  page: 'page',
 };
 
 export const internalCoursesMy = `${internal}/${INTERNAL_PAGES.courses}/${INTERNAL_COURSES_PAGES.my}`;
 export const internalCoursesAll = `${internal}/${INTERNAL_PAGES.courses}/${INTERNAL_COURSES_PAGES.all}`;
+export const internalCoursesPage = (courseId) =>
+  `${internal}/${INTERNAL_PAGES.courses}/${INTERNAL_COURSES_PAGES.page}/${courseId}`;
 
 
 export default {
@@ -65,4 +68,5 @@ export default {
 
     internalCoursesMy,
     internalCoursesAll,
+    internalCoursesPage,
 }

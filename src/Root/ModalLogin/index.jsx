@@ -8,6 +8,8 @@ import connect from 'utils/connect'
 import { modals, user } from 'store';
 import request from 'utils/request';
 import api from 'config/api';
+import history from 'utils/history';
+import urls from 'config/urls';
 
 import PayStub from '../components/PayStub';
 
@@ -50,17 +52,23 @@ export default class extends Component{
     });
 
     if(response){
-      this.props.actions.user.userSetData(true, response.data.user);
+      const { user } = response.data;
+      this.props.actions.user.userSetData(true, user);
 
       const { wannaCourseId=null } = this.props.store.user;
 
       if( wannaCourseId !== null){
-        this.setState({
-          isLoading: false,
-          isError: false,
-          showPayStub: true,
-          courseId: wannaCourseId,
-        });
+        if(user.courses.indexOf(wannaCourseId) >= 0){
+          this.close();
+          history.push(urls.internalCoursesPage(wannaCourseId));
+        }else{
+          this.setState({
+            isLoading: false,
+            isError: false,
+            showPayStub: true,
+            courseId: wannaCourseId,
+          });
+        }
         this.props.actions.user.userSetWannaCourse(null);
         return;
       }
@@ -90,16 +98,16 @@ export default class extends Component{
     this.setState({ [inputName]: e.target.value });
   };
 
-  close = () => {
+  close = (noClearUsersCourses=false) => {
     this.setState(initialState);
-    this.props.actions.user.userSetWannaCourse(null);
+    !noClearUsersCourses && this.props.actions.user.userSetWannaCourse(null);
     this.props.actions.modals.closeModal(this.modalId);
   };
 
   modalData = () => this.props.store.modals[this.modalId];
 
   openRegistration = () => {
-    this.close();
+    this.close(true);
     this.props.actions.modals.openModal('registration');
   };
 
