@@ -1,0 +1,29 @@
+@import "src/Root/vars";
+
+
+.root,
+.rootSmall{
+  width: $size-normal;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.rootSmall{
+  width: $size-small;
+}
+
+.rootVk{
+  background-image: url("./img/vk.svg");
+  background-size: 55%;
+}
+
+.rootFb{
+  background-image: url("./img/fb.svg");
+  background-size: 25%;
+}
+
+.rootInst{
+  background-image: url("./img/inst.svg");
+  background-size: 50%;
+}

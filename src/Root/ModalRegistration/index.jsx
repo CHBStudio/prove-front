@@ -4,6 +4,7 @@ import { SmallButton } from "components/SmallButtons";
 import BaseModal from 'components/BaseModal';
 import TextInput from 'components/TextInput';
 import FullSidesLoader from 'components/FullSidesLoader';
+import SocialButton from 'components/SocialButton';
 import connect from 'utils/connect'
 import { modals, user } from 'store';
 import request from 'utils/request';
@@ -150,6 +151,8 @@ export default class extends Component{
         val={password}
       />
       <RedButton onClick={this.onRegistration}>Регистрация</RedButton>
+      <SocialButton type="vk" className={styles.socialBtn}/>
+      <SocialButton type="fb" className={styles.socialBtn}/>
       <FullSidesLoader isHidden={!isLoading}/>
       { isError && <p className={styles.errorMessage}>{ errorMessage }</p> }
       <br/>

@@ -16,6 +16,7 @@
   cursor: pointer;
   outline: none;
   border-radius: $border-radius-small;
+  vertical-align: top;
 
   &:hover{
     border-color: $color-pink;

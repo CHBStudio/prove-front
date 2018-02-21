@@ -1,0 +1,39 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: absolute;
+  height: auto;
+  width: auto;
+  text-align: center;
+  bottom: $indent-big;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.title{
+  display: inline-block;
+  position: relative;
+  width: auto;
+  height: $size-small;
+  font-size: $font-size-small;
+  color: $color-black;
+  line-height: $size-small;
+  margin-right: $indent-small;
+  vertical-align: top;
+}
+
+.logo{
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  height: $size-small;
+  width: calc(#{$size-small * 2});
+  background-image: url("./img/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}

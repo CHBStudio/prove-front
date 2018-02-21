@@ -21,7 +21,7 @@
 .text{
   display: block;
   position: relative;
-  margin-bottom: $indent-big;
+  margin-bottom: $indent-small;
 }
 
 .leftSide{
@@ -60,4 +60,12 @@
 .videoContainer {
   height: 100%;
   width: 100%;
+}
+
+.socialBtn{
+  margin-left: $indent-small;
+}
+
+.mainBtn{
+  margin-top: $indent-big;
 }

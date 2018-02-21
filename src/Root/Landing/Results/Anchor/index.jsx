@@ -1,6 +1,8 @@
 import Title from 'components/Title';
 import RedButton from 'components/RedButton';
 
+import MadeBy from './MadeBy';
+
 import styles from './styles.scss';
 
 
@@ -12,4 +14,8 @@ export default ({ scrollToPrograms }) => <div className={styles.root}>
     onClick={scrollToPrograms}
     className={styles.button}
   >Выбрать программу</RedButton>
+
+  <br/>
+  <br/>
+  <MadeBy/>
 </div>

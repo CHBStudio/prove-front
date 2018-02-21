@@ -4,6 +4,7 @@ import Title from 'components/Title';
 import Button from 'components/Button';
 import PhotoSide from 'components/PhotoSide';
 import VideoContainer from 'components/VideoContainer';
+import { SmallButton } from "components/SocialButton";
 
 import BaseScreen from '../components/BaseScreen';
 import coverUrl from './img/cover.jpg';
@@ -71,7 +72,19 @@ export default class extends Component {
         <div className={cn(styles.leftSide, showVideo && styles.leftSideHidden)} style={{ width: `${leftSideWidth}px` }}>
           <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
           <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
-          <Button onClick={scrollToPrograms}>Выбрать программу</Button>
+
+          <a href="http://instagram.com" target="_blank">
+            <SmallButton type="inst" className={styles.socialBtn}/>
+          </a>
+          <a href="http://vk.com" target="_blank">
+            <SmallButton type="vk" className={styles.socialBtn}/>
+          </a>
+          <a href="http://fb.com" target="_blank">
+            <SmallButton type="fb" className={styles.socialBtn}/>
+          </a>
+
+          <br/>
+          <Button onClick={scrollToPrograms} className={styles.mainBtn}>Выбрать программу</Button>
         </div>
         <div
           className={styles.rightSide}
