@@ -11,4 +11,7 @@ export default {
   courseGoToPay: courseId => `${api}/course/pay?id=${courseId}`,
 
   courseGet: `${api}/course/get`,
+
+  vkSocialLogin: `${api}/user/vk/`,
+  fbSocialLogin: `${api}/user/fb/`,
 }

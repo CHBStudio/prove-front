@@ -82,7 +82,6 @@ export default class extends Component {
           <a href="http://fb.com" target="_blank">
             <SmallButton type="fb" className={styles.socialBtn}/>
           </a>
-
           <br/>
           <Button onClick={scrollToPrograms} className={styles.mainBtn}>Выбрать программу</Button>
         </div>

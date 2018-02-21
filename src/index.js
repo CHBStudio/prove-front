@@ -6,6 +6,7 @@ import 'babel-polyfill';
 
 import history from 'utils/history';
 import storeScheme from 'store';
+import checkIsMobile from 'utils/checkIsMobile';
 
 import Root from './Root';
 
@@ -37,6 +38,11 @@ if (false) {
     enhancer
   );
 }
+
+const isMobile = checkIsMobile();
+window.__IS_MOBILE__ = isMobile;
+document.getElementsByTagName('html')[0].classList.add(isMobile ? '__IS_MOBILE__' : '__IS_DESKTOP__');
+
 
 
 ReactDOM.render(
