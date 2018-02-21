@@ -71,7 +71,7 @@ export default class extends Component {
         <div className={cn(styles.leftSide, showVideo && styles.leftSideHidden)} style={{ width: `${leftSideWidth}px` }}>
           <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
           <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
-          <Button onClick={scrollToPrograms}>Заниматься прямо сейчас</Button>
+          <Button onClick={scrollToPrograms}>Выбрать программу</Button>
         </div>
         <div
           className={styles.rightSide}
