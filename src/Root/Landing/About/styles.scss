@@ -113,4 +113,8 @@
 
 .mainBtn{
   margin-top: $indent-big;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-normal;
+  }
 }

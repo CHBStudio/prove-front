@@ -4,6 +4,7 @@ import Title from 'components/Title';
 import pluralizer from 'utils/pluralizer';
 import PhotoSide from 'components/PhotoSide';
 import VideoContainer from 'components/VideoContainer';
+import MobileVideo from 'components/MobileVideo';
 
 import GoToProgram from '../components/GotToProgram';
 import ProgramSection from '../components/ProgramSection';
@@ -52,13 +53,13 @@ export default class extends Component{
     const { data, userHasThisProgram, isLoggedIn, className, classNamePhotoSide, classNameDescriptionSide } = this.props;
 
     return <ProgramSection className={className}>
-      <PhotoSide
+      { !window.__IS_MOBILE__ && <PhotoSide
         backgroundImage={'/' + data.photo}
         side="left"
         onClick={this.openVideo}
         isHidden={showVideo}
         className={classNamePhotoSide}
-      />
+      /> }
       <DescriptionSide
         className={cn(styles.descriptionSide, classNameDescriptionSide)}
         isHidden={showVideo}
@@ -84,11 +85,15 @@ export default class extends Component{
           />
         }
       </DescriptionSide>
-      <VideoContainer
+      { window.__IS_MOBILE__ && <MobileVideo
+        backgroundImage={'/' + data.photo}
+        src={'/' + data.video}
+      /> }
+      { !window.__IS_MOBILE__ && <VideoContainer
         isHidden={!showVideo}
         src={'/' + data.video}
         onClose={this.closeVideo}
-      />
+      /> }
     </ProgramSection>
   }
 }

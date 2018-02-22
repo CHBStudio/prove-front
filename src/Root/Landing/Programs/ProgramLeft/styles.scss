@@ -5,4 +5,8 @@
   display: block;
   position: relative;
   margin: $indent-normal 0;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: 0;
+  }
 }

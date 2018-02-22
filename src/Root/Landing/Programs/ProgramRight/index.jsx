@@ -4,6 +4,7 @@ import Title from 'components/Title';
 import pluralizer from 'utils/pluralizer';
 import PhotoSide from 'components/PhotoSide';
 import VideoContainer from 'components/VideoContainer';
+import MobileVideo from 'components/MobileVideo';
 
 import GoToProgram from '../components/GotToProgram';
 import ProgramSection from '../components/ProgramSection';
@@ -76,18 +77,22 @@ export default class extends Component{
           />
         }
       </DescriptionSide>
-      <PhotoSide
+      { window.__IS_MOBILE__ && <MobileVideo
+        backgroundImage={'/' + data.photo}
+        src={'/' + data.video}
+      /> }
+      { !window.__IS_MOBILE__ && <PhotoSide
         backgroundImage={'/' + data.photo}
         side="right"
         onClick={this.openVideo}
         isHidden={showVideo}
         className={classNamePhotoSide}
-      />
-      <VideoContainer
+      /> }
+      { !window.__IS_MOBILE__ && <VideoContainer
         isHidden={!showVideo}
         src={'/' + data.video}
         onClose={this.closeVideo}
-      />
+      /> }
     </ProgramSection>
   }
 }

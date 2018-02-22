@@ -7,6 +7,10 @@
   width: 100%;
   height: auto;
   margin-top: $indent-big;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-normal;
+  }
 }
 
 .cost{
@@ -23,4 +27,8 @@
 
 .button{
   vertical-align: top;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-normal;
+  }
 }

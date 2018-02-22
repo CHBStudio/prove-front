@@ -7,4 +7,8 @@
   margin-top: $indent-giant;
   width: 100%;
   height: auto;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-big;
+  }
 }

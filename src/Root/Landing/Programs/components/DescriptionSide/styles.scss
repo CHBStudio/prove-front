@@ -13,6 +13,13 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  :global(.__IS_MOBILE__) & {
+    display: block;
+    min-height: 0;
+    height: auto;
+    width: 100%;
+  }
 }
 
 .wrapperFlex{

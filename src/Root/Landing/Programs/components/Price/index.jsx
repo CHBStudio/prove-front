@@ -29,6 +29,7 @@ const Price = ({ cost, courseId, isLoggedIn, actions }) => {
     className={styles.root}
   >
     <div className={styles.cost}>{ cost }</div>
+    { window.__IS_MOBILE__ && <br/> }
     { Button }
   </div>;
 };
