@@ -7,10 +7,20 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  height: $header-height-mobile;
+  height: $header-height;
   background-color: rgba(#fff, .9);
   width: 100%;
-  padding: 0 $indent-giant;
+}
 
-  background-color: #333;
+.logo{
+  display: block;
+  position: relative;
+  height: $header-height;
+  width: 50%;
+  margin: 0 auto;
+  background-image: url("../Header/img/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 60%;
+  background-color: transparent;
 }

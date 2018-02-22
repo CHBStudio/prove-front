@@ -2,7 +2,7 @@ import styles from './styles.scss';
 
 
 export default () => {
-  return <div className={styles.root}>
-    kek
-  </div>
+  return <header className={styles.root}>
+    <div className={styles.logo}/>
+  </header>
 }
