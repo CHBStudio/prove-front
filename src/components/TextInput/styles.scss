@@ -30,6 +30,12 @@
   &:focus {
     border-color: $color-pink;
   }
+
+  :global(.__IS_MOBILE__) & {
+    height: $size-normal;
+    line-height: $size-normal;
+    width: 100%;
+  }
 }
 
 .errorMessage{

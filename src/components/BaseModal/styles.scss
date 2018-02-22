@@ -30,6 +30,10 @@
   width: 100%;
   height: 100%;
   transition: transform $anim-normal;
+
+  :global(.__IS_MOBILE__) & {
+    display: block;
+  }
 }
 
 .body{
@@ -42,6 +46,16 @@
   padding: $indent-big;
   background-color: #fff;
   border-radius: $border-radius-small;
+
+  :global(.__IS_MOBILE__) & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: $indent-normal;
+    border-radius: 0;
+  }
 }
 
 .clickZone{
@@ -51,4 +65,12 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.closeBtn{
+  display: block;
+  position: absolute;
+  top: $indent-normal;
+  right: $indent-normal;
+  z-index: 100000;
 }
