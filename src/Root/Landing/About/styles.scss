@@ -3,6 +3,10 @@
 
 .root{
   text-align: right;
+
+  :global(.__IS_MOBILE__) & {
+    padding-top: $indent-giant;
+  }
 }
 
 .container{
@@ -10,18 +14,30 @@
   position: relative;
   height: 100%;
   width: 100%;
+
+  :global(.__IS_MOBILE__) & {
+    text-align: center;
+  }
 }
 
 .mainTitle{
   font-size: $font-size-giant;
   margin-bottom: $indent-big;
   text-align: right;
+
+  :global(.__IS_MOBILE__) & {
+    text-align: center;
+  }
 }
 
 .text{
   display: block;
   position: relative;
   margin-bottom: $indent-small;
+
+  :global(.__IS_MOBILE__) & {
+    text-align: center;
+  }
 }
 
 .leftSide{
@@ -46,6 +62,7 @@
     top: 0;
     transform: none;
     width: 100%;
+    text-align: center;
   }
 }
 

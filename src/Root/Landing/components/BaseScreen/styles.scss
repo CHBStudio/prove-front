@@ -13,6 +13,10 @@
   @include screen(1300px){
     padding: $indent-giant $indent-big;
   }
+
+  :global(.__IS_MOBILE__) & {
+    padding: $indent-big $indent-normal;
+  }
 }
 
 .waypoint{

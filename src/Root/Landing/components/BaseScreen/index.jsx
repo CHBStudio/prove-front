@@ -4,7 +4,7 @@ import Waypoint from 'react-waypoint';
 import styles from './styles.scss';
 
 
-export default class extends Component{
+class DesktopBaseScreen extends Component{
 
   static propTypes = {
     children: propTypes.any,
@@ -107,6 +107,17 @@ export default class extends Component{
     }
   }
 }
+
+
+
+const MobileBaseScreen = ({ children, className, pageRef }) => {
+  return <div className={cn(styles.root, className)} ref={pageRef}>
+    { children }
+  </div>
+};
+
+
+export default props => window.__IS_MOBILE__ ? <MobileBaseScreen {...props}/> : <DesktopBaseScreen {...props}/>
 
 
 

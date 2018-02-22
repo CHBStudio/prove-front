@@ -12,7 +12,7 @@ html, body, :global(#root) {
   height: 100%;
   min-width: $page-width-desktop-min;
 
-  :global(.__IS_MOBILE__) &{
+  :global(.__IS_MOBILE__) & {
     min-width: 0;
   }
 }

@@ -98,7 +98,7 @@ export default class extends Component {
           <br/>
           <Button onClick={scrollToPrograms} className={styles.mainBtn}>Выбрать программу</Button>
         </div>
-        <div
+        { !window.__IS_MOBILE__ && <div
           className={styles.rightSide}
           style={rightSideStyles}
           ref={ref => this.rightSideRef = ref}
@@ -110,13 +110,13 @@ export default class extends Component {
             onClick={this.openVideo}
             isHidden={showVideo}
           />
-        </div>
-        <VideoContainer
+        </div> }
+        { !window.__IS_MOBILE__ && <VideoContainer
           isHidden={!showVideo}
           src={videoUrl}
           onClose={this.closeVideo}
           className={styles.videoContainer}
-        />
+        /> }
       </div>
     </BaseScreen>
   }
