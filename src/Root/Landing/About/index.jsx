@@ -5,6 +5,7 @@ import Button from 'components/Button';
 import PhotoSide from 'components/PhotoSide';
 import VideoContainer from 'components/VideoContainer';
 import { SmallButton } from "components/SocialButton";
+import MobileVideo from 'components/MobileVideo';
 
 import BaseScreen from '../components/BaseScreen';
 import coverUrl from './img/cover.jpg';
@@ -116,6 +117,10 @@ export default class extends Component {
           src={videoUrl}
           onClose={this.closeVideo}
           className={styles.videoContainer}
+        /> }
+        { window.__IS_MOBILE__ && <MobileVideo
+          backgroundImage={coverUrl}
+          src={videoUrl}
         /> }
       </div>
     </BaseScreen>

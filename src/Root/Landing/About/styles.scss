@@ -105,6 +105,10 @@
 
 .socialBtn{
   margin-left: $indent-small;
+
+  :global(.__IS_MOBILE__) & {
+    margin: 0 calc(#{$indent-small/2});
+  }
 }
 
 .mainBtn{
