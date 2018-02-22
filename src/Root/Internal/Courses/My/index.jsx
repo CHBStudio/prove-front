@@ -22,6 +22,8 @@ export default class extends Component{
           isLoggedIn={true}
           data={course}
           userHasThisProgram={ true }
+          classNamePhotoSide={styles.photoSide}
+          classNameDescriptionSide={styles.descriptionSide}
         />)
       }
     </div>;

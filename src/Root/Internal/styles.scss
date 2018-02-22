@@ -19,6 +19,10 @@
   padding: $indent-big;
   vertical-align: top;
   z-index: 2;
+
+  @include screen($page-width-desktop-min){
+    position: relative;
+  }
 }
 
 .link{
@@ -41,6 +45,11 @@
   padding: $indent-big $indent-big $indent-big calc(#{$indent-big + $left-bar-width});
   z-index: 1;
   overflow: hidden;
+
+  @include screen($page-width-desktop-min){
+    padding: $indent-big;
+    width: calc(100% - #{$left-bar-width});
+  }
 }
 
 .mainPage{

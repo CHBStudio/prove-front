@@ -10,3 +10,24 @@
   margin-top: 0;
   margin-bottom: $indent-big;
 }
+
+.photoSide{
+  @include screen(1300px){
+    width: 300px;
+  }
+
+  @include screen(1200px){
+    display: none;
+  }
+}
+
+.descriptionSide{
+  @include screen(1300px){
+    width: calc(100% - 300px - #{$indent-giant} * 1.5);
+  }
+
+  @include screen(1200px){
+    width: 100%;
+    min-height: 0;
+  }
+}

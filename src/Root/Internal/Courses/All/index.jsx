@@ -21,6 +21,8 @@ export default class extends Component{
           isLoggedIn={true}
           data={course}
           userHasThisProgram={ userCourse.indexOf(course.id) >= 0 }
+          classNamePhotoSide={styles.photoSide}
+          classNameDescriptionSide={styles.descriptionSide}
         />)
       }
     </div>;

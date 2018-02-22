@@ -23,10 +23,14 @@ export default class extends Component{
     data: propTypes.object.isRequired,
     userHasThisProgram: propTypes.bool.isRequired,
     className: propTypes.string,
+    classNamePhotoSide: propTypes.string,
+    classNameDescriptionSide: propTypes.string,
   };
 
   static defaultProps = {
     className: '',
+    classNamePhotoSide: '',
+    classNameDescriptionSide: '',
   };
 
   constructor(props){
@@ -44,11 +48,11 @@ export default class extends Component{
   render(){
     const { showVideo } = this.state;
 
-    const { data, userHasThisProgram, isLoggedIn, className } = this.props;
+    const { data, userHasThisProgram, isLoggedIn, className, classNamePhotoSide, classNameDescriptionSide } = this.props;
 
     return <ProgramSection className={className}>
       <DescriptionSide
-        className={styles.descriptionSide}
+        className={cn(styles.descriptionSide, classNameDescriptionSide)}
         isHidden={showVideo}
       >
         <Title tag="h3">
@@ -77,6 +81,7 @@ export default class extends Component{
         side="right"
         onClick={this.openVideo}
         isHidden={showVideo}
+        className={classNamePhotoSide}
       />
       <VideoContainer
         isHidden={!showVideo}

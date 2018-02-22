@@ -14,8 +14,11 @@
   position: relative;
   width: 100%;
   height: auto;
-  padding-right: $indent-giant;
   padding-bottom: $indent-giant;
+
+  @include screen(1300px){
+    padding-bottom: $indent-big;
+  }
 }
 
 .title,
