@@ -151,8 +151,12 @@ export default class extends Component{
         val={password}
       />
       <RedButton onClick={this.onRegistration}>Регистрация</RedButton>
-      <SocialButton type="vk" className={styles.socialBtn}/>
-      <SocialButton type="fb" className={styles.socialBtn}/>
+      <a href={api.vkSocialLogin}>
+        <SocialButton type="vk" className={styles.socialBtn}/>
+      </a>
+      <a href={api.fbSocialLogin}>
+        <SocialButton type="fb" className={styles.socialBtn}/>
+      </a>
       <FullSidesLoader isHidden={!isLoading}/>
       { isError && <p className={styles.errorMessage}>{ errorMessage }</p> }
       <br/>
