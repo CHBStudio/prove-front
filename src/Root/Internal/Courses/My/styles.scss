@@ -9,6 +9,11 @@
 .program{
   margin-top: 0;
   margin-bottom: $indent-big;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .photoSide{

@@ -23,6 +23,16 @@
   @include screen($page-width-desktop-min){
     position: relative;
   }
+
+  :global(.__IS_MOBILE__) & {
+    display: block;
+    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: $indent-normal;
+    border-bottom: 1px solid $color-gray;
+  }
 }
 
 .link{
@@ -32,6 +42,11 @@
 
   &Active{
     color: $color-pink;
+  }
+
+  :global(.__IS_MOBILE__) & {
+    margin-bottom: $indent-big;
+    margin-right: $indent-small;
   }
 }
 
@@ -50,14 +65,30 @@
     padding: $indent-big;
     width: calc(100% - #{$left-bar-width});
   }
+
+  :global(.__IS_MOBILE__) & {
+    padding: $indent-normal $indent-normal 0 $indent-normal;
+    width: 100%;
+  }
 }
 
 .mainPage{
   margin-top: $indent-big;
   width: 120px;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: 0;
+    width: auto;
+    margin-right: $indent-small;
+  }
 }
 
 .logout{
   margin-top: $indent-normal;
   width: 120px;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: 0;
+    width: auto;
+  }
 }

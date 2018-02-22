@@ -23,7 +23,7 @@ export default connect({ user })(({ actions }) => {
       >
         Мои
       </NavLink>
-      <br/>
+      { !window.__IS_MOBILE__ && <br/> }
       <NavLink
         className={styles.link}
         to={urls.internalCoursesAll}
@@ -38,7 +38,7 @@ export default connect({ user })(({ actions }) => {
       >
         Главная
       </SmallRedButton>
-      <br/>
+      { !window.__IS_MOBILE__ && <br/> }
       <SmallButton
         onClick={actions.user.userLogout}
         className={styles.logout}
