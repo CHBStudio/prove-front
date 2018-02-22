@@ -39,6 +39,14 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  :global(.__IS_MOBILE__) &{
+    display: block;
+    padding: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+  }
 }
 
 .rightSide{
@@ -60,6 +68,10 @@
 
   @include screen(1100px){
     height: 70%;
+  }
+
+  :global(.__IS_MOBILE__) &{
+    display: block;
   }
 }
 

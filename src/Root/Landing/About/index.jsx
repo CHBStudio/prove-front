@@ -52,11 +52,15 @@ export default class extends Component {
   };
 
   componentWillMount(){
-    window.addEventListener('resize', this.fit);
+    if(!window.__IS_MOBILE__){
+      window.addEventListener('resize', this.fit);
+    }
   }
 
   componentDidMount(){
-    this.fit();
+    if(!window.__IS_MOBILE__){
+      this.fit();
+    }
   }
 
   openVideo = () => this.setState({ showVideo: true });
@@ -67,9 +71,18 @@ export default class extends Component {
     const { pageRef, onEnter, scrollToPrograms } = this.props;
     const { leftSideWidth, windowHeight, imageWidth, showVideo } = this.state;
 
-    return <BaseScreen pageRef={pageRef} onEnter={onEnter} className={styles.root} noListen={true} height={windowHeight}>
+    const leftSideStyles = window.__IS_MOBILE__ ? {} : { width: `${leftSideWidth}px` };
+    const rightSideStyles = window.__IS_MOBILE__ ? {} : { width: `${imageWidth}px`};
+
+    return <BaseScreen
+      pageRef={pageRef}
+      onEnter={onEnter}
+      className={styles.root}
+      noListen={true}
+      height={windowHeight}
+    >
       <div className={styles.container} ref={ref => this.containerRef = ref}>
-        <div className={cn(styles.leftSide, showVideo && styles.leftSideHidden)} style={{ width: `${leftSideWidth}px` }}>
+        <div className={cn(styles.leftSide, showVideo && styles.leftSideHidden)} style={leftSideStyles}>
           <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
           <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
 
@@ -87,7 +100,7 @@ export default class extends Component {
         </div>
         <div
           className={styles.rightSide}
-          style={{ width: `${imageWidth}px`}}
+          style={rightSideStyles}
           ref={ref => this.rightSideRef = ref}
         >
           <PhotoSide
@@ -109,6 +122,8 @@ export default class extends Component {
   }
 
   componentWillUnmount(){
-    window.removeEventListener('resize', this.fit);
+    if(!window.__IS_MOBILE__){
+      window.removeEventListener('resize', this.fit);
+    }
   }
 }
