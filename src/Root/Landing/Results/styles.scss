@@ -13,9 +13,21 @@
   @include screen(1300px){
     padding-left: $indent-big;
   }
+
+  :global(.__IS_MOBILE__) & {
+    margin-bottom: $indent-big;
+    padding-left: 0;
+  }
 }
 
 .slideWrapper{
   display: block;
   position: relative;
+}
+
+.slider{
+  :global(.__IS_MOBILE__) & {
+    left: -$indent-normal;
+    width: calc(100% + #{$indent-normal * 2});
+  }
 }

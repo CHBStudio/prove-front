@@ -17,7 +17,7 @@ export default ({ pageRef, onEnter, results, scrollToPrograms }) => {
 
   const settings = {
     dots: false,
-    slidesToShow: 3,
+    slidesToShow: window.__IS_MOBILE__ ? 1 : 3,
     autoplay: true,
     pauseOnHover: true,
     centerMode: true,
@@ -26,6 +26,7 @@ export default ({ pageRef, onEnter, results, scrollToPrograms }) => {
     prevArrow: <RightArrow/>,
     nextArrow: <LeftArrow />,
     className: styles.slider,
+    arrows: !window.__IS_MOBILE__,
   };
 
   return <BaseScreen

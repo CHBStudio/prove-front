@@ -16,20 +16,38 @@ export default ({ pageRef, onEnter }) => {
   >
     <Title tag="h2" className={styles.title}>О тренере</Title>
     <div className={styles.container}>
-      <VideoContainer
+      { !window.__IS_MOBILE__ && <VideoContainer
         videos={[
           { src: coachVideoUrl, type: 'video/mp4' },
         ]}
         autoPlay={true}
         loop={true}
-      />
+      /> }
       <div className={styles.overlay}/>
       <div className={styles.content}>
         <p className={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa eaque id labore molestiae neque quae quisquam repellat reprehenderit tempora? Dignissimos enim eveniet explicabo fugiat inventore labore quos recusandae tempore!
-        </p>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa eaque id labore molestiae neque quae quisquam repellat reprehenderit tempora? Dignissimos enim eveniet explicabo fugiat inventore labore quos recusandae tempore!
+          Профессиональный тренер по фитнесу и бодибилдингу
+          <br/>
+          <br/>
+          Дипломированный диетолог
+          <br/>
+          <br/>
+          Создательница проекта по преображению для девушек.
+          <br/>
+          <br/>
+          За год существования проекта 400 девушек уже добились серьезных результатов
+          <br/>
+          <br/>
+          Автор профессионального видеокурса тренировок для дома
+          <br/>
+          <br/>
+          Хореограф и чемпионка России по танцам
+          <br/>
+          <br/>
+          Автор линейки спортивной одежды
+          <br/>
+          <br/>
+          Блоггер
         </p>
       </div>
     </div>

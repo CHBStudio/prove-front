@@ -39,6 +39,10 @@
       background-color: $color-pink;
     }
   }
+
+  :global(.__IS_MOBILE__) & {
+    padding: $indent-small 0;
+  }
 }
 
 .text{
@@ -49,6 +53,10 @@
   padding: 0 $indent-small;
   overflow: hidden;
   transition: height $anim-normal, opacity $anim-normal;
+
+  :global(.__IS_MOBILE__) & {
+    padding: 0;
+  }
 }
 
 .title{

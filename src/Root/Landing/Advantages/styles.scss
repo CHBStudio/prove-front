@@ -12,25 +12,60 @@
   @include screen(1300px){
     padding: 0 $indent-big;
   }
+
+  :global(.__IS_MOBILE__) & {
+    padding: 0;
+  }
 }
 
 .cover{
   display: block;
   position: relative;
   height: auto;
-  width: 100%;
+  width: calc(100% + #{$indent-normal * 2});
   margin-top: $indent-giant;
+  left: -$indent-normal;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-big;
+  }
 }
 
 .container{
   display: block;
   position: relative;
-  margin-top: $indent-big;
+  text-align: center;
   width: 100%;
   height: auto;
   padding: 0 $indent-giant;
 
   @include screen(1300px){
     padding: 0 $indent-big;
+  }
+}
+
+.icon{
+
+  &1{
+    background-image: url("./img/icon1.svg");
+  }
+
+  &2{
+    background-image: url("./img/icon2.svg");
+    background-size: auto 65%;
+  }
+
+  &3{
+    background-image: url("./img/icon3.svg");
+  }
+
+  &4{
+    background-image: url("./img/icon4.svg");
+    background-size: auto 65%;
+  }
+
+  &5{
+    background-image: url("./img/icon5.svg");
+    background-size: auto 55%;
   }
 }

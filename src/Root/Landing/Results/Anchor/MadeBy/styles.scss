@@ -11,6 +11,12 @@
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+
+  :global(.__IS_MOBILE__) & {
+    position: relative;
+    bottom: auto;
+    margin-top: $indent-normal;
+  }
 }
 
 .title{

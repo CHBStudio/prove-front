@@ -4,10 +4,15 @@
 .root{
   display: inline-block;
   position: relative;
-  width: calc(100%/3 - #{$indent-giant} * 2 / 3);
+  width: calc(100%/3 - #{$indent-giant});
 
-  &:nth-of-type(2n){
-    margin: 0 $indent-giant;
+  margin: $indent-giant calc(#{$indent-giant / 2}) 0 calc(#{$indent-giant / 2});
+
+  :global(.__IS_MOBILE__) & {
+    display: block;
+    width: 100%;
+    margin: 0;
+    margin-top: $indent-big;
   }
 }
 
@@ -15,7 +20,7 @@
   display: block;
   position: relative;
   width: 100%;
-  height: calc(#{$size-big} * 1.5);
+  height: calc(#{$size-big} * 1.2);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -29,6 +34,10 @@
   text-align: center;
   font-size: $font-size-big;
   margin-top: $indent-big;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-small;
+  }
 }
 
 .text{
@@ -38,4 +47,8 @@
   text-align: center;
   font-size: $font-size-normal;
   margin-top: $indent-normal;
+
+  :global(.__IS_MOBILE__) & {
+    margin-top: $indent-small;
+  }
 }

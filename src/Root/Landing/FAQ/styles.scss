@@ -11,4 +11,8 @@
   position: relative;
   width: 600px;
   margin: 0 auto;
+
+  :global(.__IS_MOBILE__) & {
+    width: 100%;
+  }
 }

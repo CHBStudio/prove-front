@@ -84,18 +84,19 @@ export default class extends Component {
     >
       <div className={styles.container} ref={ref => this.containerRef = ref}>
         <div className={cn(styles.leftSide, showVideo && styles.leftSideHidden)} style={leftSideStyles}>
-          <Title tag="h1" className={styles.mainTitle}>Очень мотивирующий заголовок</Title>
-          <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt dignissimos ea fugiat, hic inventore iste molestiae nemo porro qui rerum sed ullam? Accusamus eum excepturi facilis, laudantium vero voluptates.</p>
-
-          <a href="http://instagram.com" target="_blank">
+          <Title tag="h1" className={styles.mainTitle}>Создай фигуру своей мечты</Title>
+          <p className={styles.text}>
+            Анастасия Крутых - твой персональный тренер, поможет тебе добиться идеального результата
+          </p>
+          <a href="https://www.instagram.com/nastya.krutyh/" target="_blank">
             <SmallButton type="inst" className={styles.socialBtn}/>
           </a>
-          <a href="http://vk.com" target="_blank">
+          <a href="https://vk.com/nastena0807" target="_blank">
             <SmallButton type="vk" className={styles.socialBtn}/>
           </a>
-          <a href="http://fb.com" target="_blank">
-            <SmallButton type="fb" className={styles.socialBtn}/>
-          </a>
+          {/*<a href="http://fb.com" target="_blank">*/}
+            {/*<SmallButton type="fb" className={styles.socialBtn}/>*/}
+          {/*</a>*/}
           <br/>
           <Button onClick={scrollToPrograms} className={styles.mainBtn}>Выбрать программу</Button>
         </div>

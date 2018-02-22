@@ -10,6 +10,10 @@
   @include screen(1300px){
     padding: 0 $indent-big;
   }
+
+  :global(.__IS_MOBILE__) & {
+    padding: 0 ;
+  }
 }
 
 .image{
@@ -23,6 +27,10 @@
   display: block;
   position: relative;
   margin-top: $indent-big;
+
+  :global(.__IS_MOBILE__) & {
+    padding: 0 $indent-normal;
+  }
 }
 
 .title{

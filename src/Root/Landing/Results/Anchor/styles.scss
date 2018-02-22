@@ -7,6 +7,10 @@
   padding: $indent-giant $indent-giant calc(#{$indent-giant * 2}) $indent-giant;
   text-align: center;
   margin-top: calc(#{$indent-giant * 1});
+
+  :global(.__IS_MOBILE__) & {
+    padding: 0;
+  }
 }
 
 .title{

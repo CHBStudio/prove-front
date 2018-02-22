@@ -4,7 +4,7 @@ import Col from './Col';
 import BaseScreen from '../components/BaseScreen';
 
 import coverUrl from './img/cover.jpg';
-import starUrl from './img/star.svg';
+
 import styles from './styles.scss';
 
 
@@ -16,17 +16,27 @@ export default ({ pageRef, onEnter }) => {
     <img src={coverUrl} className={styles.cover}/>
     <div className={styles.container}>
       <Col
-        icon={starUrl}
+        className={styles.icon1}
         title="Преимущества"
         text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi assumenda dolor explicabo nulla repellendus! "
       />
       <Col
-        icon={starUrl}
+        className={styles.icon2}
         title="Преимущества"
         text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi assumenda dolor explicabo nulla repellendus! "
       />
       <Col
-        icon={starUrl}
+        className={styles.icon3}
+        title="Преимущества"
+        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi assumenda dolor explicabo nulla repellendus! "
+      />
+      <Col
+        className={styles.icon4}
+        title="Преимущества"
+        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi assumenda dolor explicabo nulla repellendus! "
+      />
+      <Col
+        className={styles.icon5}
         title="Преимущества"
         text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi assumenda dolor explicabo nulla repellendus! "
       />
