@@ -11,18 +11,8 @@
   background-color: rgba(#fff, .9);
   width: 100%;
   padding: 0 $indent-giant;
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform $anim-normal, opacity $anim-normal;
 
   min-width: $page-width-desktop-min;
-
-
-  &Hidden{
-    transform: translateY(-20%);
-    opacity: 0;
-    pointer-events: none;
-  }
 
   @include screen(1300px){
     padding: 0 $indent-big;

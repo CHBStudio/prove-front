@@ -6,6 +6,7 @@ import urls from 'config/urls';
 import history from 'utils/history';
 
 import Header from './Header';
+import MobileHeader from './MobileHeader';
 import About from './About';
 import Programs from './Programs';
 import FAQ from './FAQ';
@@ -82,7 +83,8 @@ class Landing extends Component{
     const scrollToPrograms = () => this.scrollToPage(urls.LANDING_PAGES.programs);
 
     return <div className={styles.root}>
-      <Header onClickLink={this.scrollToPage}/>
+      { !window.__IS_MOBILE__ && <Header onClickLink={this.scrollToPage}/> }
+      { window.__IS_MOBILE__ && <MobileHeader/> }
       <div className={styles.screensContainer}>
         <About
           pageRef={this.pageRef(urls.LANDING_PAGES.about)}
