@@ -3,7 +3,7 @@ import Title from 'components/Title';
 import BaseScreen from '../components/BaseScreen';
 import VideoContainer from './VideoContainer';
 
-import coachVideoUrl from './video/coach.mp4';
+import coachVideoUrl from './video/coach.mov';
 import styles from './styles.scss';
 
 
