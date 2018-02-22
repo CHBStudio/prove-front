@@ -26,6 +26,9 @@ export default class extends Component{
           classNameDescriptionSide={styles.descriptionSide}
         />)
       }
+      { courses.length === 0 && <p className={styles.emptyText}>
+        Вы пока не приобрели ни одного курса
+      </p> }
     </div>;
   }
 }
