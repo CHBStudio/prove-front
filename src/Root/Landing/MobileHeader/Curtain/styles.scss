@@ -1,0 +1,44 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000000;
+  background-color: #fff;
+  padding: $indent-big;
+
+  transition: transform $anim-normal;
+
+  &Hidden{
+    transform: translateX(-100%);
+  }
+}
+
+.closeBtn{
+  display: block;
+  position: absolute;
+  top: $indent-small;
+  right: $indent-small;
+}
+
+.link{
+  margin-bottom: $indent-normal;
+  font-size: 20px;
+}
+
+.linkActive{
+  color: $color-pink;
+}
+
+.regBtn{
+  margin-top: $indent-big;
+}
+
+.loginBtn{
+  margin-top: $indent-normal;
+}

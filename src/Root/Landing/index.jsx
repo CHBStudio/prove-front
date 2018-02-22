@@ -84,7 +84,7 @@ class Landing extends Component{
 
     return <div className={styles.root}>
       { !window.__IS_MOBILE__ && <Header onClickLink={this.scrollToPage}/> }
-      { window.__IS_MOBILE__ && <MobileHeader/> }
+      { window.__IS_MOBILE__ && <MobileHeader onClickLink={this.scrollToPage}/> }
       <div className={styles.screensContainer}>
         <About
           pageRef={this.pageRef(urls.LANDING_PAGES.about)}

@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  height: $header-height;
+  height: $header-height-mobile;
   background-color: rgba(#fff, .9);
   width: 100%;
 }
@@ -15,12 +15,26 @@
 .logo{
   display: block;
   position: relative;
-  height: $header-height;
+  height: $header-height-mobile;
   width: 50%;
   margin: 0 auto;
   background-image: url("../Header/img/logo.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 60%;
+  background-color: transparent;
+}
+
+.menu{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $header-height-mobile;
+  height: $header-height-mobile;
+  background-image: url("./img/menu.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40%;
   background-color: transparent;
 }
