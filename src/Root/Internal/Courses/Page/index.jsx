@@ -56,6 +56,7 @@ export default class extends Component{
 
   render(){
     const { isLoading, data, isLoaded, activeDay } = this.state;
+
     return <div className={styles.root}>
       <FullSidesLoader isHidden={!isLoading}/>
       { isLoaded && <div className={styles.container}>
@@ -65,7 +66,9 @@ export default class extends Component{
           activeIndex={activeDay}
           onChangeIndex={this.onChangeDay}
         />
-        <Day data={data.schedule[activeDay]}/>
+        { activeDay < 7 && <Day data={data.schedule[activeDay]}/> }
+        { activeDay === 7 && <p className={styles.formatedText}>{ data.course.food }</p> }
+        { activeDay === 8 && <p className={styles.formatedText}>{ data.course.extra }</p> }
       </div> }
     </div>
   }

@@ -26,3 +26,17 @@
   min-width: 0;
   margin: 0;
 }
+
+.title{
+  margin-bottom: $indent-normal;
+}
+
+.mobileVideo{
+  height: 200px;
+  margin-bottom: $indent-normal;
+  background-color: #eee;
+}
+
+.mobileVideoPreview{
+  display: none;
+}

@@ -7,6 +7,10 @@
   height: auto;
   width: 100%;
   min-height: 600px;
+
+  :global(.__IS_MOBILE__) & {
+    min-height: 200px;
+  }
 }
 
 .container{
@@ -32,4 +36,14 @@
 
 .text{
   margin-bottom: $indent-big;
+
+  :global(.__IS_MOBILE__) & {
+    margin-bottom: $indent-normal;
+  }
+}
+
+.formatedText {
+  display: block;
+  font-size: $font-size-normal;
+  margin-top: $indent-giant;
 }

@@ -12,10 +12,14 @@ export default class extends Component{
     backgroundImage: propTypes.string.isRequired,
     src: propTypes.string.isRequired,
     loop: propTypes.bool,
+    classNames: propTypes.string,
+    classNameImg: propTypes.string,
   };
 
   static defaultProps = {
     loop: true,
+    className: '',
+    classNameImg: '',
   };
 
   constructor(props){
@@ -62,17 +66,17 @@ export default class extends Component{
   };
 
   render(){
-    const { backgroundImage, src, loop} = this.props;
+    const { backgroundImage, src, loop, className, classNameImg } = this.props;
     const { isPlaying } = this.state;
 
-    return <div className={styles.root}>
+    return <div className={cn(styles.root, className)}>
       <video
         ref={ref => this.videoRef = ref}
         className={styles.video}
         src={src}
         loop={loop}
       />
-      <img src={backgroundImage} className={styles.img}/>
+      <img src={backgroundImage} className={cn(styles.img, classNameImg)}/>
       <PlayButton className={cn(styles.playBtn, isPlaying && styles.playBtnHidden)} onClick={this.onPlay}/>
       <Spinner className={cn(styles.spinner, !isPlaying && styles.spinnerHidden)}/>
     </div>
