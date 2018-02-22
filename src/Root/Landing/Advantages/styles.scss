@@ -8,6 +8,10 @@
 .title{
   font-size: $font-size-giant;
   padding: 0 $indent-giant;
+
+  @include screen(1300px){
+    padding: 0 $indent-big;
+  }
 }
 
 .cover{
@@ -25,4 +29,8 @@
   width: 100%;
   height: auto;
   padding: 0 $indent-giant;
+
+  @include screen(1300px){
+    padding: 0 $indent-big;
+  }
 }

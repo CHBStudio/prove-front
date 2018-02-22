@@ -9,6 +9,10 @@
   height: auto;
   width: 100%;
   overflow: hidden;
+
+  @include screen(1300px){
+    padding: $indent-giant $indent-big;
+  }
 }
 
 .waypoint{

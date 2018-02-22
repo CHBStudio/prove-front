@@ -5,8 +5,11 @@
   display: block;
   position: relative;
 
-  padding-left: $indent-giant;
-  padding-right: $indent-giant;
+  padding: 0 $indent-giant;
+
+  @include screen(1300px){
+    padding: 0 $indent-big;
+  }
 }
 
 .image{

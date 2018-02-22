@@ -15,11 +15,17 @@
   opacity: 1;
   transition: transform $anim-normal, opacity $anim-normal;
 
+  min-width: $page-width-desktop-min;
+
 
   &Hidden{
     transform: translateY(-20%);
     opacity: 0;
     pointer-events: none;
+  }
+
+  @include screen(1300px){
+    padding: 0 $indent-big;
   }
 }
 
@@ -35,6 +41,14 @@
   background-repeat: no-repeat;
   vertical-align: top;
   cursor: pointer;
+
+  @include screen(1200px){
+    margin-right: $indent-small;
+  }
+
+  @include screen(1080px){
+    display: none;
+  }
 }
 
 .rightGroup{
@@ -45,6 +59,10 @@
   width: auto;
   right: $indent-giant;
   line-height: $header-height;
+
+  @include screen(1300px){
+    right: $indent-big;
+  }
 }
 
 .enterButton,

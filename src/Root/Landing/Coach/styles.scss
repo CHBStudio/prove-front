@@ -37,6 +37,10 @@
   height: 100%;
   z-index: 2;
   padding: $indent-giant;
+
+  @include screen(1300px){
+    padding-left: $indent-big;
+  }
 }
 
 .title{
@@ -45,6 +49,10 @@
   margin-bottom: $indent-giant;
   font-size: $font-size-giant;
   padding-left: $indent-giant;
+
+  @include screen(1300px){
+    padding-left: $indent-big;
+  }
 }
 
 .text{

@@ -24,6 +24,10 @@
     &:hover{
       transform: scale(1.05);
     }
+
+    @include screen(1300px){
+      left: calc(#{$indent-big + $indent-giant});
+    }
   }
 
   &Right{
@@ -32,6 +36,10 @@
 
     &:hover{
       transform: scale(1.05) rotate(180deg);
+    }
+
+    @include screen(1300px){
+      left: $indent-big;
     }
   }
 }

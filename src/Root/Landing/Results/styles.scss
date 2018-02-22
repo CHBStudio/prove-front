@@ -9,6 +9,10 @@
   padding-left: $indent-giant;
   font-size: $font-size-giant;
   margin-bottom: $indent-giant;
+
+  @include screen(1300px){
+    padding-left: $indent-big;
+  }
 }
 
 .slideWrapper{

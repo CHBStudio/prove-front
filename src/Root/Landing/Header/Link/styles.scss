@@ -8,6 +8,10 @@
   line-height: 90px;
   margin: 0 $indent-normal;
 
+  @include screen(1200px){
+    margin: 0 $indent-small;
+  }
+
   &:hover{
     .line{
       transform: translateY(0);

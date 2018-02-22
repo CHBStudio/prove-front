@@ -49,6 +49,18 @@
   height: 100%;
   top: 50%;
   transform: translateY(-50%);
+
+  @include screen(1300px){
+    height: 90%;
+  }
+
+  @include screen(1200px){
+    height: 80%;
+  }
+
+  @include screen(1100px){
+    height: 70%;
+  }
 }
 
 .photo{
