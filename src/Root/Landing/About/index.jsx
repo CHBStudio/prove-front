@@ -9,7 +9,7 @@ import MobileVideo from 'components/MobileVideo';
 
 import BaseScreen from '../components/BaseScreen';
 import coverUrl from './img/cover.jpg';
-import videoUrl from './video/small.mp4';
+import videoUrl from './video/main.mov';
 
 import styles from './styles.scss';
 
