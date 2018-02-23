@@ -72,7 +72,7 @@ export default class extends Component {
     const { pageRef, onEnter, scrollToPrograms } = this.props;
     const { leftSideWidth, windowHeight, imageWidth, showVideo } = this.state;
 
-    const leftSideStyles = window.__IS_MOBILE__ ? {} : { width: `${leftSideWidth}px` };
+    const leftSideStyles = window.__IS_MOBILE__ ? {} : { width: `${leftSideWidth - 1}px` };
     const rightSideStyles = window.__IS_MOBILE__ ? {} : { width: `${imageWidth}px`};
 
     return <BaseScreen
