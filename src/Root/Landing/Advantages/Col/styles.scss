@@ -5,7 +5,7 @@
   display: inline-block;
   position: relative;
   width: calc(100%/3 - #{$indent-giant});
-
+  vertical-align: top;
   margin: $indent-giant calc(#{$indent-giant / 2}) 0 calc(#{$indent-giant / 2});
 
   :global(.__IS_MOBILE__) & {

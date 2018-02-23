@@ -81,6 +81,7 @@ export default class extends Component{
           <Price
             courseId={data.id}
             cost={`${data.cost} ₽`}
+            isActive={data.active}
             isLoggedIn={isLoggedIn}
           />
         }

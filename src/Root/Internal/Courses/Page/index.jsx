@@ -8,6 +8,7 @@ import history from 'utils/history';
 import urls from 'config/urls';
 
 import DayNavigator from './DayNavigator';
+import WeekNavigator from './WeekNavigator';
 import Day from './Day';
 
 import styles from './styles.scss';
@@ -28,7 +29,11 @@ export default class extends Component{
 
       data: null,
 
-      activeDay: 0,
+      activeDay: null,
+      activeWeek: 0,
+
+      showFood: false,
+      showExtra: false,
     }
   }
 
@@ -52,24 +57,54 @@ export default class extends Component{
     this.loadCourseData();
   }
 
-  onChangeDay = activeDay => this.setState({ activeDay });
+  onChangeDay = activeDay => this.setState({ activeDay, showExtra: false, showFood: false });
+
+  onChangeWeek = activeWeek => this.setState({ activeWeek, activeDay: null, showExtra: false, showFood: false });
+
+  showFood = () => this.setState({ showFood: true, showExtra: false });
+
+  showExtra = () => this.setState({ showExtra: true, showFood: false, });
+
+  renderContent = () => {
+    const { data, activeDay, activeWeek, showFood, showExtra, } = this.state;
+
+    const weeks = data.schedule;
+    const countWeeks = weeks.length;
+    const daysArray = weeks[activeWeek];
+
+    const currentActiveDay = activeDay === null ? daysArray[0].day : activeDay;
+
+    const currentActiveDayObject = daysArray.filter(day => day.day === currentActiveDay)[0];
+
+    return <div className={styles.container}>
+      <Title className={styles.title}>{ data.course.title }</Title>
+      <p className={styles.text}>{ data.course.description }</p>
+      <WeekNavigator
+        countWeeks={countWeeks}
+        activeWeek={activeWeek}
+        onChange={this.onChangeWeek}
+        showFood={this.showFood}
+        showExtra={this.showExtra}
+        isFood={showFood}
+        isExtra={showExtra}
+      />
+      { !showFood && !showExtra && <DayNavigator
+        activeDay={currentActiveDay}
+        onChange={this.onChangeDay}
+        days={daysArray}
+      /> }
+      { !showFood && !showExtra && <Day data={currentActiveDayObject}/> }
+      { showFood && <p className={styles.formatedText}>{ data.course.food }</p> }
+      { showExtra && <p className={styles.formatedText}>{ data.course.extra }</p> }
+    </div>
+  };
 
   render(){
-    const { isLoading, data, isLoaded, activeDay } = this.state;
+    const { isLoading, isLoaded } = this.state;
 
     return <div className={styles.root}>
       <FullSidesLoader isHidden={!isLoading}/>
-      { isLoaded && <div className={styles.container}>
-        <Title className={styles.title}>{ data.course.title }</Title>
-        <p className={styles.text}>{ data.course.description }</p>
-        <DayNavigator
-          activeIndex={activeDay}
-          onChangeIndex={this.onChangeDay}
-        />
-        { activeDay < 7 && <Day data={data.schedule[activeDay]}/> }
-        { activeDay === 7 && <p className={styles.formatedText}>{ data.course.food }</p> }
-        { activeDay === 8 && <p className={styles.formatedText}>{ data.course.extra }</p> }
-      </div> }
+      { isLoaded && this.renderContent() }
     </div>
   }
 }

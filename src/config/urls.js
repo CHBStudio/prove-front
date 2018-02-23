@@ -41,6 +41,7 @@ export const internalCoursesAll = `${internal}/${INTERNAL_PAGES.courses}/${INTER
 export const internalCoursesPage = (courseId) =>
   `${internal}/${INTERNAL_PAGES.courses}/${INTERNAL_COURSES_PAGES.page}/${courseId}`;
 
+// export const internalCoursesPageWeek = (courseId, weekIndex) => `${internalCoursesPage(courseId)}/${weekIndex}`;
 
 export default {
     root,

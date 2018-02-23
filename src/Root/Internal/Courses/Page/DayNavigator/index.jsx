@@ -1,36 +1,24 @@
 import BaseRoundButton from 'components/BaseRoundButton';
-import { SmallRedButton } from 'components/SmallButtons';
 
 import styles from './styles.scss';
 
 
-export default ({ activeIndex=0, onChangeIndex=()=>{} }) => {
-  const days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вc'];
-
-  const buttonIndexFood =  days.length;
-  const buttonIndexExtra = days.length + 1;
+export default ({ days, onChange=()=>{}, activeDay }) => {
+  const daysNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вc'];
 
   return <div className={styles.root}>
-    { days.map((dayName, index) => {
+    { days.map((day, index) => {
       return <BaseRoundButton
         key={index}
-        onClick={() => onChangeIndex(index)}
-        className={cn(styles.button, activeIndex === index && styles.buttonActive)}
+        onClick={() => onChange(day.day)}
+        className={cn(
+          styles.button,
+          activeDay === day.day &&
+          styles.buttonActive
+        )}
       >
-        { dayName }
-      </BaseRoundButton>
+        { daysNames[day.day - 1] }
+      </BaseRoundButton>;
     }) }
-    <SmallRedButton
-      className={cn(styles.buttonExtra, activeIndex === buttonIndexFood && styles.buttonExtraActive)}
-      onClick={() => onChangeIndex(buttonIndexFood)}
-    >
-      Питание
-    </SmallRedButton>
-    <SmallRedButton
-      className={cn(styles.buttonExtra, activeIndex === buttonIndexExtra && styles.buttonExtraActive)}
-      onClick={() => onChangeIndex(buttonIndexExtra)}
-    >
-      Дополнительно
-    </SmallRedButton>
   </div>;
 }

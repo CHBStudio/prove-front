@@ -28,10 +28,14 @@
 }
 
 .buttonExtra{
+  display: inline-block;
+  width: auto;
+  padding: 0 $indent-normal;
   border: none;
   border-radius: $size-small;
   margin-right: $indent-small;
   margin-top: $indent-small;
+  font-size: $font-size-small;
   color: #fff;
 
   &Active{

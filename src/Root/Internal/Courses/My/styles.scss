@@ -38,5 +38,11 @@
 }
 
 .emptyText{
-  font-size: $font-size-normal-big;
+  font-size: 20px;
+  line-height: 35px;
+  text-align: center;
+
+  :global(.__IS_MOBILE__) & {
+    font-size: $font-size-normal;
+  }
 }
