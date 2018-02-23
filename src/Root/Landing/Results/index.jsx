@@ -27,6 +27,7 @@ export default ({ pageRef, onEnter, results, scrollToPrograms }) => {
     nextArrow: <LeftArrow />,
     className: styles.slider,
     arrows: !window.__IS_MOBILE__,
+    swipe: window.__IS_MOBILE__,
   };
 
   return <BaseScreen
