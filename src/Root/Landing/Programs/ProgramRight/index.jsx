@@ -74,6 +74,7 @@ export default class extends Component{
             courseId={data.id}
             cost={`${data.cost} ₽`}
             isLoggedIn={isLoggedIn}
+            isActive={data.active}
           />
         }
       </DescriptionSide>
