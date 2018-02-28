@@ -11,6 +11,7 @@ export default ({ className, onClick, type }) => {
       type === 'vk' && styles.rootVk,
       type === 'fb' && styles.rootFb,
       type === 'inst' && styles.rootInst,
+      type === 'yt' && styles.rootYt,
       className
     )}
     onClick={onClick}
@@ -24,6 +25,7 @@ export const SmallButton = ({ className, onClick, type }) => {
       type === 'vk' && styles.rootVk,
       type === 'fb' && styles.rootFb,
       type === 'inst' && styles.rootInst,
+      type === 'yt' && styles.rootYt,
       className
     )}
     onClick={onClick}

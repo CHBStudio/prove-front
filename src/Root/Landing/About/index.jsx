@@ -94,9 +94,9 @@ export default class extends Component {
           <a href="https://vk.com/nastena0807" target="_blank">
             <SmallButton type="vk" className={styles.socialBtn}/>
           </a>
-          {/*<a href="http://fb.com" target="_blank">*/}
-            {/*<SmallButton type="fb" className={styles.socialBtn}/>*/}
-          {/*</a>*/}
+          <a href="https://www.youtube.com/channel/UCSD9pBl-_LXImagCbZ4mNiA/videos" target="_blank">
+            <SmallButton type="yt" className={styles.socialBtn}/>
+          </a>
           <br/>
           <Button onClick={scrollToPrograms} className={styles.mainBtn}>Выбрать программу</Button>
         </div>
