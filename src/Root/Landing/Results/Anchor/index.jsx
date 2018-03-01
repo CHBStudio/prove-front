@@ -15,7 +15,7 @@ export default ({ scrollToPrograms }) => <div className={styles.root}>
     className={styles.button}
   >Выбрать программу</RedButton>
 
-  <br/>
-  <br/>
-  <MadeBy/>
+  {/*<br/>*/}
+  {/*<br/>*/}
+  {/*<MadeBy/>*/}
 </div>
