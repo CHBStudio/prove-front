@@ -26,6 +26,7 @@ export default ({ pageRef, onEnter }) => {
       <div className={styles.overlay}/>
       <div className={styles.content}>
         <p className={styles.text}>
+          <Title className={styles.coachTitle}>Анастасия Крутых</Title>
           Профессиональный тренер по фитнесу и бодибилдингу
           <br/>
           <br/>

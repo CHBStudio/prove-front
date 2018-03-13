@@ -15,7 +15,7 @@
   display: block;
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 700px;
 
   :global(.__IS_MOBILE__) & {
     height: auto;
@@ -81,12 +81,21 @@
   }
 }
 
+.coachTitle{
+  display: block;
+  position: relative;
+  font-size: $font-size-big;
+  color: #fff;
+  font-family: $font-family-roboto;
+  margin-bottom: $indent-normal-big;
+}
+
 .text{
   display: block;
   position: relative;
   color: #fff;
   font-size: 18px;
-  margin-bottom: $indent-big;
+  //margin-bottom: $indent-big;
 
   :global(.__IS_MOBILE__) & {
     margin-bottom: 0;

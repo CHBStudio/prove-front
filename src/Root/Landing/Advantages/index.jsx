@@ -18,7 +18,7 @@ export default ({ pageRef, onEnter }) => {
       <Col
         className={styles.icon1}
         title="Уникальная программа"
-        text="Доступ к которой остается у вас навсегда!"
+        text="На разработку которой потребовалось более 3х лет"
       />
       <Col
         className={styles.icon2}
