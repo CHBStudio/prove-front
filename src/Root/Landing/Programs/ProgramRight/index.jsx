@@ -12,6 +12,8 @@ import DescriptionSide from '../components/DescriptionSide';
 import Params from '../components/Params';
 import List from '../components/List';
 import Price from '../components/Price';
+import ExpireDays from '../components/ExpireDays';
+import ExpiredDays from '../components/ExpiredDays';
 
 import styles from './styles.scss';
 
@@ -63,6 +65,11 @@ export default class extends Component{
           videoParam={`${data.video_count} видео-${pluralizer(data.video_count, 'урок', 'урока', 'уроков')}`}
           timeParam={`${data.hour_count} ${pluralizer(data.hour_count, 'час', 'часа', 'часов')} занятий`}
         />
+
+        <ExpireDays numDays={data.expire}/>
+
+        { userHasThisProgram && <ExpiredDays timestamp={data.expired}/> }
+
         <p className={styles.text}>
           { data.description }
         </p>

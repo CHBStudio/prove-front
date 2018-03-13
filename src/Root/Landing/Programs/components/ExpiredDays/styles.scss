@@ -1,0 +1,9 @@
+@import "src/Root/vars";
+
+
+.root{
+  display: inline-block;
+  position: relative;
+  font-size: $font-size-small;
+  color: $color-gray;
+}
