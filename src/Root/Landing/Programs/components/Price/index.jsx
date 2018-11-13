@@ -7,7 +7,7 @@ import styles from './styles.scss';
 
 
 
-const Price = ({ cost, courseId, isLoggedIn, actions, isActive }) => {
+const Price = ({ cost, courseId, isLoggedIn, actions, isActive, oldCost }) => {
 
   const onClickButtonPay = () => {
     actions.user.userSetWannaCourse(courseId);
@@ -28,7 +28,8 @@ const Price = ({ cost, courseId, isLoggedIn, actions, isActive }) => {
   return <div
     className={styles.root}
   >
-    <div className={styles.cost}>{ cost }</div>
+    { oldCost && <div className={cn(styles.cost, styles.line)}>{ oldCost }</div> }
+    <div className={cn(styles.cost, oldCost && styles.newPrice)}>{ cost }</div>
     { window.__IS_MOBILE__ && <br/> }
     { isActive ? Button : <RedButton
         className={cn(styles.button, styles.buttonDisabled)}

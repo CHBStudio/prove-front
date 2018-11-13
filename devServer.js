@@ -8,14 +8,14 @@ let app = express();
 app.use(
   '/api',
   proxy({
-    target: 'http://128.199.49.230'
+    target: 'http://prove-project.ru'
   }),
 );
 
 app.use(
   '/media',
   proxy({
-    target: 'http://128.199.49.230'
+    target: 'http://prove-project.ru'
   }),
 );
 

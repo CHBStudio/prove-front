@@ -82,6 +82,7 @@ export default class extends Component{
             cost={`${data.cost} ₽`}
             isLoggedIn={isLoggedIn}
             isActive={data.active}
+            oldCost={data.old_cost && `${data.old_cost} ₽`}
           />
         }
       </DescriptionSide>
